@@ -29,9 +29,11 @@ def list_resources(dataset_id: str = DATASET_ID) -> list[dict]:
     r = _get(f"{CKAN_BASE}/package_show", params={"id": dataset_id})
     res = r.json()["result"]["resources"]
     return [
-        {"name": x.get("name", ""), "url": x["url"], "format": (x.get("format") or "").lower()}
+        {"name": x.get("name", ""), "url": x["url"], "format": (x.get("format") or "").lower(), "size": x.get("size") or 0}
         for x in res
-        if (x.get("format") or "").lower() == "csv" or x["url"].lower().endswith(".csv")
+        if ((x.get("format") or "").lower() == "csv" or x["url"].lower().endswith(".csv"))
+        # Kasım-Aralık 2024 dosyaları boş (187 bayt) yayımlanmış: 1 MB altını atla
+        and (x.get("size") or 0) > 1_000_000
     ]
 
 

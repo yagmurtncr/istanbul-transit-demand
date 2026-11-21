@@ -9,23 +9,27 @@ Repo gizli. Herkese açık yapmadan önce bu dosyayı İngilizceye çevir veya k
 - [x] Hava durumu (Open-Meteo) ve tatil/arife takvimi (`external.py`)
 - [x] Lag/rolling özellikleri + geleceğe bakma (leakage) testi
 - [x] Walk-forward validasyon ve seasonal-naive baseline
-- [ ] `python scripts/run_phase1.py --months 12` komutunu kendi bilgisayarında çalıştır (İBB portalı bazı ağlardan erişilemiyor)
-- [ ] Gerçek CSV kolon adlarını kontrol et; farklıysa `clean.py` içindeki `RENAME` sözlüğüne ekle
-- [ ] COVID dönemini (2020–2021) dahil edip etmeyeceğine karar ver, gerekçesini README'ye yaz
+- [x] Gerçek veri: Ocak–Temmuz 2024 (7 ay, ~120 milyon satır) tarayıcıda akış halinde okunup saatlik toplamlara indirildi → `data/aggregated/`
+- [x] Gerçek CSV kolon adları kontrol edildi, `clean.py` ile birebir uyumlu
+- [x] Bulgu: Ağustos–Ekim 2024 dosyaları eksik (Ekim'de 18 gün), Kasım–Aralık 2024 boş yayımlanmış → indirici 1 MB altı dosyaları atlıyor
+- [ ] Daha uzun geçmiş için 2023 aylarını da ekle (COVID dönemi 2020–2021 hariç tutulmalı mı? gerekçesini yaz)
 
 ## Faz 2 — EDA ve istatistik (2. hafta)
 - [ ] `notebooks/01_eda.ipynb`: saatlik/haftalık desenler, mod bazında dağılımlar, aykırı değerler
-- [ ] Yağmur etkisi: yağmurlu ve kuru saatlerde talep farkı, bootstrap %95 güven aralığı
+- [x] Yağmur etkisi: yağmurlu ve kuru iş günleri, bootstrap %95 güven aralığı + Mann-Whitney (`analysis/stats.py`)
 - [ ] Bayram ve arife etkisi: olay çalışması (event study) grafiği
-- [ ] Mann-Whitney U ve permütasyon testleri; çoklu karşılaştırma düzeltmesi (Benjamini-Hochberg)
+- [x] Mann-Whitney U testi
+- [ ] Permütasyon testi ve çoklu karşılaştırma düzeltmesi (Benjamini-Hochberg)
 - [ ] Ücretsiz ulaşım günleri (1 Mayıs, okulun ilk günü vb.) için ayrı bir özellik ekle
-- [ ] Bulguları README'nin "Results" bölümüne kısa grafiklerle ekle
+- [x] Bulgular `reports/results.md`'de, GitHub Actions her güncellemede yeniden üretiyor
 
 ## Faz 3 — Modelleme (3. hafta)
-- [ ] Ridge / Poisson regresyon baseline'ı (scikit-learn pipeline)
-- [ ] XGBoost; Optuna ile hiperparametre araması (yalnızca train fold'larında)
-- [ ] Modelleri tek tabloda karşılaştır: MAE, sMAPE, WAPE, fold bazında
-- [ ] SHAP: en önemli özellikler, yağmur ve tatil etkisi
+- [x] Ridge baseline (scikit-learn pipeline, one-hot saat/gün)
+- [x] XGBoost ve HistGradientBoosting
+- [ ] Optuna ile hiperparametre araması (yalnızca train fold'larında)
+- [x] Modelleri tek tabloda karşılaştır: MAE, sMAPE, WAPE (`reports/results.md`)
+- [x] Permütasyon önemi (özellik katkıları)
+- [ ] SHAP grafikleri
 - [ ] Hata analizi: model en çok hangi saatlerde/günlerde yanılıyor?
 - [ ] (Opsiyonel) Hat bazında tahmine genişlet
 

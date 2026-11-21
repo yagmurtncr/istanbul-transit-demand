@@ -2,7 +2,7 @@
 
 Hourly passenger demand forecasting for Istanbul's public transport network (road, rail and sea), built on open data from the **İBB Açık Veri Portalı** and enriched with weather and the Turkish holiday calendar.
 
-> Status: 🚧 Phase 1 (data pipeline + baseline) in progress. See [TODO.md](TODO.md) for the roadmap.
+> Status: ✅ Phase 1 (data pipeline) · 🚧 Phase 2–3 (statistics & models) running on real data — see **[reports/results.md](reports/results.md)**. Roadmap in [TODO.md](TODO.md).
 
 ## Goals
 - Forecast next-day hourly demand per transport mode (later: per line / station).
@@ -16,7 +16,7 @@ Hourly passenger demand forecasting for Istanbul's public transport network (roa
 | [Open-Meteo Archive API](https://open-meteo.com/) | Hourly temperature, precipitation, snowfall, wind | Free, no key |
 | [`holidays`](https://pypi.org/project/holidays/) | Turkish public and religious holidays (incl. eves) | Python package |
 
-Raw data is **not** committed to the repo; the pipeline downloads it into `data/raw/`.
+Raw data is **not** committed (each month is ~1.6 GB). Instead, [`data/aggregated/`](data/aggregated/) contains January–July 2024 summed to hourly totals per mode (~120 million raw rows → 15k rows), so the analysis is reproducible in seconds. The full pipeline can still download raw months into `data/raw/`.
 
 ## Approach
 1. **Pipeline** – download, clean, aggregate to an hourly panel, fill missing hours explicitly.
@@ -30,8 +30,9 @@ Raw data is **not** committed to the repo; the pipeline downloads it into `data/
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
-pytest                                   # 7 tests: cleaning, leakage, validation, holidays
-python scripts/run_phase1.py --months 12 # download -> features -> baseline scores
+pytest                                   # 9 tests: cleaning, leakage, validation, holidays, bootstrap
+python scripts/run_analysis.py          # EDA, statistical tests, model comparison -> reports/
+python scripts/run_phase1.py --months 6  # optional: re-download raw months from İBB
 ```
 
 ## Project structure
@@ -46,7 +47,7 @@ notebooks/   EDA and analysis
 ```
 
 ## Results
-_To be added after Phase 2._
+See [reports/results.md](reports/results.md) — regenerated automatically by the `Analysis` GitHub Actions workflow whenever data or model code changes.
 
 ## License
 Code: MIT. Data: subject to the İBB Open Data Licence and Open-Meteo terms; cite "Kaynak: İBB Açık Veri Portalı".

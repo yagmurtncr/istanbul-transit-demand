@@ -42,7 +42,8 @@ def compare(feats: pd.DataFrame, mode: str, n_folds: int = 4, test_days: int = 1
         rows.append({"fold": k, "model": "Seasonal naive (last week)", **metrics(y[te], df["lag_168"].to_numpy()[te])})
         for name, model in _models().items():
             model.fit(X.iloc[tr], y[tr])
-            rows.append({"fold": k, "model": name, **metrics(y[te], model.predict(X.iloc[te]))})
+            pred = np.clip(model.predict(X.iloc[te]), 0, None)  # passenger counts cannot be negative
+            rows.append({"fold": k, "model": name, **metrics(y[te], pred)})
             if name != "Ridge":
                 last = (name, model, X.iloc[te], y[te])
     res = pd.DataFrame(rows)

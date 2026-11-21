@@ -31,6 +31,8 @@ Repo gizli. Herkese açık yapmadan önce bu dosyayı İngilizceye çevir veya k
 - [x] Permütasyon önemi (özellik katkıları)
 - [ ] SHAP grafikleri
 - [ ] Hata analizi: model en çok hangi saatlerde/günlerde yanılıyor?
+- [ ] Okul takvimi özelliği ekle (Haziran sonundan itibaren talep belirgin düşüyor)
+- [ ] Gece saatlerinde sMAPE yüksek: log1p hedef veya metro kapalı saatler için kural dene
 - [ ] (Opsiyonel) Hat bazında tahmine genişlet
 
 ## Faz 4 — MLOps ve Cloud (4. hafta)

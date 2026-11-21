@@ -26,3 +26,7 @@ pythonpath = ["src"]
 
 [tool.ruff]
 line-length = 110
+
+[tool.ruff.lint]
+# Pin the rule set so new ruff releases do not change CI results
+select = ["E4", "E7", "E9", "F", "B", "I"]

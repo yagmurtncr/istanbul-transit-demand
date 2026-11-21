@@ -44,7 +44,7 @@ def main() -> None:
     # ---------- EDA figures ----------
     h = hourly.assign(hour=hourly["timestamp"].dt.hour, weekend=hourly["timestamp"].dt.dayofweek >= 5)
     fig, axes = plt.subplots(1, 3, figsize=(12, 3.2))
-    for ax, (mode, label) in zip(axes, MODES.items()):
+    for ax, (mode, label) in zip(axes, MODES.items(), strict=True):
         p = h[h["transport_type"] == mode].groupby(["weekend", "hour"])["passengers"].mean().unstack(0)
         ax.plot(p.index, p[False] / 1e3, label="Weekday")
         ax.plot(p.index, p[True] / 1e3, label="Weekend", linestyle="--")

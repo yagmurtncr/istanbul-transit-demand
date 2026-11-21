@@ -29,19 +29,19 @@ Expanding-window walk-forward validation, 4 folds × 14 days. All lag features e
 
 | model                      |     MAE |   sMAPE |   WAPE |   WAPE vs naive |
 |:---------------------------|--------:|--------:|-------:|----------------:|
-| XGBoost                    | 11139   |   38.5  |  10.14 |          -26.5  |
-| Gradient boosting          | 12396   |   40.38 |  11.3  |          -18.15 |
+| XGBoost                    | 11025   |   32.1  |  10.04 |          -27.26 |
+| Gradient boosting          | 12328   |   36.06 |  11.23 |          -18.61 |
+| Ridge                      | 14715.8 |   47.5  |  13.47 |           -2.42 |
 | Seasonal naive (last week) | 15109.4 |   23.39 |  13.8  |            0    |
-| Ridge                      | 15697.2 |   51.96 |  14.34 |            3.9  |
 
 ### Road (bus, metrobus)
 
 | model                      |     MAE |   sMAPE |   WAPE |   WAPE vs naive |
 |:---------------------------|--------:|--------:|-------:|----------------:|
-| XGBoost                    | 11935.9 |   17.67 |   9.15 |          -30.09 |
-| Gradient boosting          | 13125.1 |   19.65 |  10.1  |          -22.84 |
+| XGBoost                    | 11933   |   17.67 |   9.15 |          -30.11 |
+| Gradient boosting          | 13114.5 |   19.65 |  10.09 |          -22.9  |
+| Ridge                      | 16913   |   44.06 |  13    |           -0.69 |
 | Seasonal naive (last week) | 17051.2 |   13.32 |  13.09 |            0    |
-| Ridge                      | 18417.5 |   44.06 |  14.13 |            7.91 |
 
 ![Forecast](figures/forecast_rail.png)
 

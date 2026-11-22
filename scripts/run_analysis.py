@@ -13,7 +13,12 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 import pandas as pd  # noqa: E402
 
-from transit.analysis.stats import daily_table, holiday_effect, rain_effect  # noqa: E402
+from transit.analysis.stats import (  # noqa: E402
+    daily_table,
+    holiday_effect,
+    rain_effect,
+    school_break_effect,
+)
 from transit.config import ROOT  # noqa: E402
 from transit.data.aggregated import load_hourly  # noqa: E402
 from transit.data.external import fetch_weather, holiday_calendar  # noqa: E402
@@ -42,7 +47,7 @@ def main() -> None:
     daily = daily_table(hourly, weather, cal)
 
     # ---------- EDA figures ----------
-    h = hourly.assign(hour=hourly["timestamp"].dt.hour, weekend=hourly["timestamp"].dt.dayofweek >= 5)
+    h = hourly.assign(hour=hourly["timestamp"].dt.hour, weekend=hourly["timestamp"].dt.day_of_week >= 5)
     fig, axes = plt.subplots(1, 3, figsize=(12, 3.2))
     for ax, (mode, label) in zip(axes, MODES.items(), strict=True):
         p = h[h["transport_type"] == mode].groupby(["weekend", "hour"])["passengers"].mean().unstack(0)
@@ -74,14 +79,16 @@ def main() -> None:
     for mode in ("rail", "road", "sea"):
         effects[(mode, "rain")] = rain_effect(daily, mode)
         effects[(mode, "holiday")] = holiday_effect(daily, mode)
-    fig, ax = plt.subplots(figsize=(7, 3.2))
+        effects[(mode, "school break")] = school_break_effect(daily, mode)
+    fig, ax = plt.subplots(figsize=(7, 4))
     labels, vals, lo, hi = [], [], [], []
     for (mode, kind), e in effects.items():
         labels.append(f"{mode} · {kind}")
         vals.append(e["pct_diff"])
         lo.append(e["pct_diff"] - e["ci_low"])
         hi.append(e["ci_high"] - e["pct_diff"])
-    ax.barh(labels, vals, xerr=[lo, hi], color=["#1a73e8" if "rain" in lb else "#f0a500" for lb in labels])
+    colors = {"rain": "#1a73e8", "holiday": "#f0a500", "school break": "#0a7d32"}
+    ax.barh(labels, vals, xerr=[lo, hi], color=[colors[lb.split(" · ")[1]] for lb in labels])
     ax.axvline(0, color="#333", linewidth=0.8)
     ax.set_xlabel("% change vs ordinary weekday (95% bootstrap CI)")
     fig.tight_layout()
@@ -123,16 +130,18 @@ def main() -> None:
         f"Data: {len(hourly):,} hourly rows, {daily['date'].nunique()} days, "
         f"{tot.sum() / 1e9:.2f} billion recorded passengers "
         f"(rail {tot.get('rail', 0) / 1e6:,.0f} M, road {tot.get('road', 0) / 1e6:,.0f} M, sea {tot.get('sea', 0) / 1e6:,.0f} M).",
-        "Weather: Open-Meteo hourly archive for central Istanbul. Holidays: `holidays` package (incl. eves).", "",
+        "Weather: Open-Meteo hourly archive for central Istanbul. Holidays: `holidays` package (incl. eves). "
+        "School breaks: MEB calendar (`SCHOOL_BREAKS`).", "",
         "## Demand patterns", "", "![Hourly profile](figures/hourly_profile.png)", "",
         "![Daily series](figures/daily_series.png)", "",
         "## Statistical tests", "",
-        "Working days only (Mon–Fri, excluding holiday eves). Rainy day = at least 2 mm of rain between 06:00 and 22:00; "
+        "Working days only (Mon–Fri, excluding holiday eves; rain and holiday tests also exclude school breaks). Rainy day = at least 2 mm of rain between 06:00 and 22:00; "
         "dry day = under 0.2 mm. Percentile bootstrap (5,000 resamples) and two-sided Mann-Whitney U test.", "",
-        "| Mode | Rain effect | Public-holiday effect |", "|---|---|---|",
+        "| Mode | Rain effect | Public-holiday effect | School-break effect |", "|---|---|---|---|",
     ]
     for mode in ("rail", "road", "sea"):
-        lines.append(f"| {mode} | {fmt_effect(effects[(mode, 'rain')])} | {fmt_effect(effects[(mode, 'holiday')])} |")
+        lines.append(f"| {mode} | {fmt_effect(effects[(mode, 'rain')])} | {fmt_effect(effects[(mode, 'holiday')])} "
+                     f"| {fmt_effect(effects[(mode, 'school break')])} |")
     lines += ["", "![Effects](figures/effects.png)", "", "## Forecasting (hourly, day-ahead features)", "",
               "Expanding-window walk-forward validation, 4 folds × 14 days. All lag features end at least 24 h "
               "before the forecast hour (enforced by a unit test).", ""]

@@ -13,7 +13,7 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from transit.models.baseline import metrics, walk_forward
 
 NUMERIC = ["lag_24", "lag_48", "lag_168", "roll_mean_24", "roll_mean_168", "temperature_2m", "precipitation",
-           "wind_speed_10m", "is_holiday", "is_eve", "is_weekend", "hour_sin", "hour_cos"]
+           "wind_speed_10m", "is_holiday", "is_eve", "school_closed", "is_weekend", "hour_sin", "hour_cos"]
 CATEGORICAL = ["hour", "dow", "month"]
 
 

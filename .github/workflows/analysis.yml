@@ -11,6 +11,7 @@ on:
       - "src/transit/analysis/**"
       - "src/transit/models/**"
       - "src/transit/features/**"
+      - "src/transit/data/**"
 
 permissions:
   contents: write

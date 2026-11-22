@@ -12,7 +12,7 @@ def add_calendar(df: pd.DataFrame) -> pd.DataFrame:
     out = df.copy()
     ts = out["timestamp"]
     out["hour"] = ts.dt.hour
-    out["dow"] = ts.dt.dayofweek
+    out["dow"] = ts.dt.day_of_week
     out["month"] = ts.dt.month
     out["is_weekend"] = (out["dow"] >= 5).astype(int)
     out["hour_sin"] = np.sin(2 * np.pi * out["hour"] / 24)

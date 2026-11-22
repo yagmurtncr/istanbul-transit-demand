@@ -29,13 +29,14 @@ def daily_table(hourly: pd.DataFrame, weather: pd.DataFrame, cal: pd.DataFrame) 
     w = w[w["timestamp"].dt.hour.between(6, 21)]
     wd = w.groupby("date", as_index=False).agg(rain_mm=("precipitation", "sum"), temp=("temperature_2m", "mean"))
     out = daily.merge(wd, on="date", how="left").merge(cal, on="date", how="left")
-    out["dow"] = out["date"].dt.dayofweek
+    out["dow"] = out["date"].dt.day_of_week
     return out
 
 
 def rain_effect(daily: pd.DataFrame, mode: str, threshold_mm: float = 2.0) -> dict:
     """Rainy vs dry working days (Mon-Fri, no holiday/eve), same weekday mix."""
-    x = daily[(daily["transport_type"] == mode) & (daily["dow"] < 5) & (daily["is_holiday"] == 0) & (daily["is_eve"] == 0)]
+    x = daily[(daily["transport_type"] == mode) & (daily["dow"] < 5) & (daily["is_holiday"] == 0)
+              & (daily["is_eve"] == 0) & (daily["school_closed"] == 0)]
     rainy, dry = x[x["rain_mm"] >= threshold_mm], x[x["rain_mm"] < 0.2]
     return bootstrap_pct_diff(rainy["passengers"], dry["passengers"])
 
@@ -44,5 +45,11 @@ def holiday_effect(daily: pd.DataFrame, mode: str) -> dict:
     """Public-holiday weekdays vs ordinary weekdays."""
     x = daily[(daily["transport_type"] == mode) & (daily["dow"] < 5)]
     hol = x[x["is_holiday"] == 1]
-    normal = x[(x["is_holiday"] == 0) & (x["is_eve"] == 0)]
+    normal = x[(x["is_holiday"] == 0) & (x["is_eve"] == 0) & (x["school_closed"] == 0)]
     return bootstrap_pct_diff(hol["passengers"], normal["passengers"])
+
+
+def school_break_effect(daily: pd.DataFrame, mode: str) -> dict:
+    """Ordinary weekdays during school breaks vs ordinary weekdays in term time."""
+    x = daily[(daily["transport_type"] == mode) & (daily["dow"] < 5) & (daily["is_holiday"] == 0) & (daily["is_eve"] == 0)]
+    return bootstrap_pct_diff(x.loc[x["school_closed"] == 1, "passengers"], x.loc[x["school_closed"] == 0, "passengers"])

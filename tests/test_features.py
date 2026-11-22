@@ -38,3 +38,9 @@ def test_holiday_calendar_marks_bayram_and_eve():
     assert cal.loc["2024-04-09", "is_eve"] == 1          # arife
     assert cal.loc["2024-04-20", "is_holiday"] == 0
     assert np.issubdtype(cal["is_holiday"].dtype, np.integer)
+
+
+def test_school_calendar():
+    cal = holiday_calendar("2024-06-10", "2024-06-20").set_index("date")
+    assert cal.loc["2024-06-14", "school_closed"] == 0      # last school day
+    assert cal.loc["2024-06-17", "school_closed"] == 1      # summer break

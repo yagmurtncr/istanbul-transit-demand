@@ -31,7 +31,8 @@ Repo gizli. Herkese açık yapmadan önce bu dosyayı İngilizceye çevir veya k
 - [x] Permütasyon önemi (özellik katkıları)
 - [ ] SHAP grafikleri
 - [ ] Hata analizi: model en çok hangi saatlerde/günlerde yanılıyor?
-- [ ] Okul takvimi özelliği ekle (Haziran sonundan itibaren talep belirgin düşüyor)
+- [x] Okul takvimi özelliği (`SCHOOL_BREAKS`, MEB 2023–2024) + okul tatili etkisi testi
+- [ ] Okul tatili tarihlerini MEB'in resmî takvimiyle tekrar doğrula; üniversite takvimini de ekle
 - [ ] Gece saatlerinde sMAPE yüksek: log1p hedef veya metro kapalı saatler için kural dene
 - [ ] (Opsiyonel) Hat bazında tahmine genişlet
 

@@ -52,7 +52,7 @@ First findings on January–July 2024 (1.43 billion passengers):
 - **Public holidays** cut weekday demand by about **24% on rail** and **31% on buses**, while **ferry** use rises by about **76%** (all statistically significant).
 - **Rain** (≥ 2 mm during the day) reduces **ferry** demand by about **15%** (significant); rail and road show no significant change.
 - **XGBoost** day-ahead forecasts reach a WAPE of about **10% (rail)** and **9% (road)**, roughly **27–30% lower error** than a same-hour-last-week baseline.
-- Demand drops visibly from late June: the school summer break, a feature still to be added.
+- Demand drops visibly from mid-June: the **school summer break**, now included as a model feature and tested separately.
 
 Full tables and figures: [reports/results.md](reports/results.md) — regenerated automatically by the `Analysis` GitHub Actions workflow whenever data or model code changes.
 

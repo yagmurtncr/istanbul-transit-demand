@@ -15,9 +15,9 @@ Working days only (Mon–Fri, excluding holiday eves; rain and holiday tests als
 
 | Mode | Rain effect | Public-holiday effect | School-break effect |
 |---|---|---|---|
-| rail | -4.0% (95% CI -6.4% to -1.5%, p=0.005, significant; n=22 vs 57) | -27.4% (95% CI -34.3% to -19.7%, p=0.000, significant; n=10 vs 102) | -17.6% (95% CI -20.3% to -15.2%, p=0.000, significant; n=41 vs 102) |
-| road | -4.3% (95% CI -6.2% to -2.3%, p=0.000, significant; n=22 vs 57) | -35.0% (95% CI -39.5% to -29.6%, p=0.000, significant; n=10 vs 102) | -21.2% (95% CI -23.8% to -18.8%, p=0.000, significant; n=41 vs 102) |
-| sea | -17.9% (95% CI -24.7% to -10.8%, p=0.000, significant; n=22 vs 57) | +76.9% (95% CI +40.8% to +107.4%, p=0.000, significant; n=10 vs 102) | +2.2% (95% CI -2.5% to +6.9%, p=0.323, not significant; n=41 vs 102) |
+| rail | -4.0% (95% CI -6.4% to -1.5%, p=0.005, significant; n=22 vs 57) | -27.4% (95% CI -34.3% to -19.7%, p=0.000, significant; n=10 vs 102) | -17.0% (95% CI -19.4% to -14.8%, p=0.000, significant; n=40 vs 102) |
+| road | -4.3% (95% CI -6.2% to -2.3%, p=0.000, significant; n=22 vs 57) | -35.0% (95% CI -39.5% to -29.6%, p=0.000, significant; n=10 vs 102) | -20.6% (95% CI -23.0% to -18.4%, p=0.000, significant; n=40 vs 102) |
+| sea | -17.9% (95% CI -24.7% to -10.8%, p=0.000, significant; n=22 vs 57) | +76.9% (95% CI +40.8% to +107.4%, p=0.000, significant; n=10 vs 102) | +2.4% (95% CI -2.3% to +7.2%, p=0.260, not significant; n=40 vs 102) |
 
 ![Effects](figures/effects.png)
 
@@ -29,18 +29,18 @@ Expanding-window walk-forward validation, 4 folds × 14 days. All lag features e
 
 | model                      |     MAE |   sMAPE |   WAPE |   WAPE vs naive |
 |:---------------------------|--------:|--------:|-------:|----------------:|
-| XGBoost                    | 11321.5 |   32.47 |  10.35 |          -25.01 |
-| Gradient boosting          | 11781.6 |   35.47 |  10.75 |          -22.09 |
-| Ridge                      | 14170.9 |   47.01 |  12.97 |           -6.05 |
+| Gradient boosting          | 11070   |   33.55 |  10.07 |          -27.06 |
+| XGBoost                    | 11057.1 |   30.96 |  10.1  |          -26.84 |
+| Ridge                      | 14018.2 |   46.2  |  12.84 |           -6.98 |
 | Seasonal naive (last week) | 15109.4 |   23.39 |  13.8  |            0    |
 
 ### Road (bus, metrobus)
 
 | model                      |     MAE |   sMAPE |   WAPE |   WAPE vs naive |
 |:---------------------------|--------:|--------:|-------:|----------------:|
-| Gradient boosting          | 11756.3 |   20.72 |   9.04 |          -30.99 |
-| XGBoost                    | 11785.6 |   22.16 |   9.07 |          -30.69 |
-| Ridge                      | 15979.2 |   42.3  |  12.27 |           -6.27 |
+| Gradient boosting          | 11456.6 |   19.55 |   8.81 |          -32.73 |
+| XGBoost                    | 11564.8 |   20.48 |   8.9  |          -32.06 |
+| Ridge                      | 16046.2 |   42.62 |  12.33 |           -5.86 |
 | Seasonal naive (last week) | 17051.2 |   13.32 |  13.09 |            0    |
 
 ![Forecast](figures/forecast_rail.png)

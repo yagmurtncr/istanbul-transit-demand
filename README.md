@@ -49,12 +49,12 @@ notebooks/   EDA and analysis
 ## Results
 First findings on January–July 2024 (1.43 billion passengers):
 
-- **Public holidays** cut weekday demand by about **24% on rail** and **31% on buses**, while **ferry** use rises by about **76%** (all statistically significant).
-- **Rain** (≥ 2 mm during the day) reduces **ferry** demand by about **15%** (significant); rail and road show no significant change.
-- **XGBoost** day-ahead forecasts reach a WAPE of about **10% (rail)** and **9% (road)**, roughly **27–30% lower error** than a same-hour-last-week baseline.
-- Demand drops visibly from mid-June: the **school summer break**, now included as a model feature and tested separately.
+- **Public holidays** cut weekday demand by about **27% on rail** and **35% on buses**, while **ferry** use rises by about **77%**.
+- **School breaks** lower weekday demand by about **17% on rail** and **21% on buses**; ferries are unaffected.
+- **Rain** (≥ 2 mm during the day) reduces demand by about **4% on rail and buses** and **18% on ferries**. This only became visible after separating school breaks from term time: the two effects were masking each other.
+- **Gradient boosting** day-ahead forecasts reach a WAPE of about **10% (rail)** and **9% (road)**, **27–33% lower error** than a same-hour-last-week baseline.
 
-Full tables and figures: [reports/results.md](reports/results.md) — regenerated automatically by the `Analysis` GitHub Actions workflow whenever data or model code changes.
+All effects above are statistically significant (bootstrap 95% CI and Mann-Whitney U, p < 0.01). Full tables and figures: [reports/results.md](reports/results.md) — regenerated automatically by the `Analysis` GitHub Actions workflow whenever data or model code changes.
 
 ## License
 Code: MIT. Data: subject to the İBB Open Data Licence and Open-Meteo terms; cite "Kaynak: İBB Açık Veri Portalı".

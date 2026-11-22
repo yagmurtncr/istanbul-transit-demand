@@ -1,6 +1,7 @@
 """External signals: hourly weather (Open-Meteo) and Turkish public holidays."""
 from __future__ import annotations
 
+import datetime as dt
 import time
 
 import holidays
@@ -31,21 +32,37 @@ def fetch_weather(start: str, end: str) -> pd.DataFrame:
 
 
 def holiday_calendar(start: str, end: str) -> pd.DataFrame:
-    """One row per day: public-holiday flag, holiday name, religious-holiday eve (arife), school break."""
-    days = pd.date_range(start, end, freq="D")
-    tr = holidays.Turkey(years=range(days.min().year, days.max().year + 1))
-    # Compare as Timestamps: Series.dt.date returns different types across pandas versions/backends.
-    names = {pd.Timestamp(d): str(n) for d, n in tr.items()}
-    df = pd.DataFrame({"date": days})
-    df["holiday_name"] = df["date"].map(names).fillna("")
-    is_arife = df["holiday_name"].str.contains("rife", case=False)       # some versions list the half-day eve
-    df["is_holiday"] = ((df["holiday_name"] != "") & ~is_arife).astype(int)
-    religious = df["holiday_name"].str.contains("Bayram", na=False) & ~is_arife & df["holiday_name"].str.contains(
-        "Ramazan|Kurban", na=False)
-    first_days = df.loc[religious & ~religious.shift(1, fill_value=False), "date"]
-    df["is_eve"] = (df["date"].isin(first_days - pd.Timedelta(days=1)) | is_arife).astype(int)
-    df["school_closed"] = df["date"].map(_school_closed).astype(int)
-    return df
+    """One row per day: public-holiday flag, holiday name, religious-holiday eve (arife), school break.
+
+    Built with plain Python dates on purpose: Series.dt.date / shift / isin behave differently
+    across pandas versions and backends, and this table must be identical everywhere.
+    """
+    days = [d.date() for d in pd.date_range(start, end, freq="D")]
+    years = range(days[0].year, days[-1].year + 1)
+    try:  # pin the language so holiday names do not depend on the machine's locale
+        tr = holidays.Turkey(years=years, language="tr")
+    except (TypeError, NotImplementedError):
+        tr = holidays.Turkey(years=years)
+    one = dt.timedelta(days=1)
+
+    def is_arife(day) -> bool:          # some versions list the half-day eve itself
+        name = str(tr.get(day, "")).lower()
+        return "arife" in name or " eve" in name
+
+    def is_religious(day) -> bool:
+        name = str(tr.get(day, ""))
+        keys = ("Ramazan", "Kurban", "Ramadan", "Sacrifice", "Eid")
+        return any(k in name for k in keys) and not is_arife(day)
+
+    eves = {d - one for d in tr if is_religious(d) and not is_religious(d - one)}
+    eves |= {d for d in tr if is_arife(d)}
+    return pd.DataFrame({
+        "date": pd.to_datetime(days),
+        "is_holiday": [int(d in tr and not is_arife(d)) for d in days],
+        "holiday_name": [str(tr.get(d, "")) for d in days],
+        "is_eve": [int(d in eves) for d in days],
+        "school_closed": [int(_school_closed(pd.Timestamp(d))) for d in days],
+    })
 
 
 # Primary/secondary school breaks (MEB çalışma takvimi). Extend when adding more years.

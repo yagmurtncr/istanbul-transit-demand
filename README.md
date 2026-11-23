@@ -1,5 +1,7 @@
 # Istanbul Public Transport Demand Forecasting
 
+[![Hugging Face dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-Hugging%20Face-yellow)](https://huggingface.co/datasets/yagmurtuncer/istanbul-public-transport-hourly-2024) [![Kaggle dataset](https://img.shields.io/badge/Dataset-Kaggle-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/nuryamurtuncer/istanbul-public-transport-hourly-passengers-2024)
+
 Hourly passenger demand forecasting for Istanbul's public transport network (road, rail and sea), built on open data from the **İBB Açık Veri Portalı** and enriched with weather and the Turkish holiday calendar.
 
 > Status: ✅ Phase 1 (data pipeline) · 🚧 Phase 2–3 (statistics & models) running on real data — see **[reports/results.md](reports/results.md)**. Roadmap in [TODO.md](TODO.md).
@@ -10,6 +12,8 @@ Hourly passenger demand forecasting for Istanbul's public transport network (roa
 - Ship it as a production-style system: tested pipeline, experiment tracking, daily automated retraining and a live dashboard.
 
 ## Data
+
+**Published datasets:** the aggregated data used in this project is available on [Hugging Face](https://huggingface.co/datasets/yagmurtuncer/istanbul-public-transport-hourly-2024) and [Kaggle](https://www.kaggle.com/datasets/nuryamurtuncer/istanbul-public-transport-hourly-passengers-2024) (CC BY 4.0, source: İBB Açık Veri Portalı).
 | Source | Content | Access |
 |---|---|---|
 | [İBB Açık Veri — Saatlik Toplu Ulaşım](https://data.ibb.gov.tr/dataset/hourly-public-transport-data-set) | Hourly passenger counts by mode, line and transfer type (monthly CSVs) | CKAN API, İBB open data licence |

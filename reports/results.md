@@ -29,8 +29,8 @@ Expanding-window walk-forward validation, 4 folds × 14 days. All lag features e
 
 | model                      |     MAE |   sMAPE |   WAPE |   WAPE vs naive |
 |:---------------------------|--------:|--------:|-------:|----------------:|
-| Gradient boosting          | 11070   |   33.55 |  10.07 |          -27.06 |
-| XGBoost                    | 11057.1 |   30.96 |  10.1  |          -26.84 |
+| Gradient boosting          | 10246.7 |   27.19 |   9.37 |          -32.08 |
+| XGBoost                    | 10888.5 |   27.13 |   9.97 |          -27.74 |
 | Ridge                      | 14018.2 |   46.2  |  12.84 |           -6.98 |
 | Seasonal naive (last week) | 15109.4 |   23.39 |  13.8  |            0    |
 
@@ -38,8 +38,8 @@ Expanding-window walk-forward validation, 4 folds × 14 days. All lag features e
 
 | model                      |     MAE |   sMAPE |   WAPE |   WAPE vs naive |
 |:---------------------------|--------:|--------:|-------:|----------------:|
-| Gradient boosting          | 11456.6 |   19.55 |   8.81 |          -32.73 |
-| XGBoost                    | 11564.8 |   20.48 |   8.9  |          -32.06 |
+| Gradient boosting          | 10492   |    9.43 |   8.07 |          -38.35 |
+| XGBoost                    | 10481.5 |    9.3  |   8.09 |          -38.24 |
 | Ridge                      | 16046.2 |   42.62 |  12.33 |           -5.86 |
 | Seasonal naive (last week) | 17051.2 |   13.32 |  13.09 |            0    |
 

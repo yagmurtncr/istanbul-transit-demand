@@ -4,8 +4,11 @@
 |---|---|---|
 | `hourly_by_mode_2024-01_2024-07.csv` | 15,336 | `date, hour, transport_type (road/rail/sea), passengers` |
 | `rail_lines_daily_2024-01_2024-07.csv` | 4,849 | `date, line, passengers` for rail lines (metro, Marmaray, tram, funicular) |
+| `weather_istanbul_2024-01_2024-07.csv` | 5,112 | Hourly `temperature_2m`, `precipitation`, `snowfall`, `wind_speed_10m` for central Istanbul (local time) |
 
 **Source:** İBB Açık Veri Portalı — *Saatlik Toplu Ulaşım Veri Seti* (İBB Açık Veri Lisansı). Kaynak: İBB Açık Veri Portalı.
+
+**Weather source:** [Open-Meteo](https://open-meteo.com/) historical weather API (CC BY 4.0). Bundled so the analysis and the in-browser demo run offline.
 
 **How it was built:** the seven monthly CSVs for January–July 2024 (~1.6 GB and ~17 million rows each,
 about 120 million rows in total) were streamed once and `number_of_passenger` was summed per

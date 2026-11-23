@@ -8,13 +8,18 @@ all 24 hours, so you can compare the forecast with what actually happened.
 """
 from __future__ import annotations
 
+import sys
+from pathlib import Path
+
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 from sklearn.ensemble import HistGradientBoostingRegressor
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))  # works without `pip install -e .`
+
 from transit.data.aggregated import load_hourly
-from transit.data.external import fetch_weather, holiday_calendar
+from transit.data.external import holiday_calendar, load_weather
 from transit.features.build import build_features
 from transit.models.baseline import metrics
 from transit.models.train import CATEGORICAL, NUMERIC
@@ -27,7 +32,7 @@ st.set_page_config(page_title="Istanbul transit demand", page_icon="🚇", layou
 def load() -> pd.DataFrame:
     hourly = load_hourly()
     start, end = hourly["timestamp"].min().date().isoformat(), hourly["timestamp"].max().date().isoformat()
-    return build_features(hourly, fetch_weather(start, end), holiday_calendar(start, end))
+    return build_features(hourly, load_weather(start, end), holiday_calendar(start, end))
 
 
 @st.cache_data(show_spinner="Training on data before the selected day…")
@@ -75,7 +80,10 @@ fig.add_scatter(x=res["timestamp"].dt.hour, y=res["lag_168"], name="Same hour la
                 line={"color": "#999", "dash": "dot"})
 fig.update_layout(xaxis_title="Hour of day", yaxis_title="Passengers", height=420, legend={"orientation": "h"},
                   margin={"t": 10})
-st.plotly_chart(fig, width="stretch")
+try:
+    st.plotly_chart(fig, width="stretch")
+except TypeError:  # older Streamlit (e.g. the in-browser build)
+    st.plotly_chart(fig, use_container_width=True)
 
 st.markdown("**How it works:** the model is retrained on every hour before the selected day and predicts all 24 hours "
             "using only information available a day ahead (lagged demand, calendar, holidays, school breaks, weather). "

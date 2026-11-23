@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import datetime as dt
 import time
+from pathlib import Path
 
 import holidays
 import pandas as pd
@@ -29,6 +30,19 @@ def fetch_weather(start: str, end: str) -> pd.DataFrame:
     df = pd.DataFrame(r.json()["hourly"]).rename(columns={"time": "timestamp"})
     df["timestamp"] = pd.to_datetime(df["timestamp"])
     return df
+
+
+WEATHER_CSV = Path(__file__).resolve().parents[3] / "data" / "aggregated" / "weather_istanbul_2024-01_2024-07.csv"
+
+
+def load_weather(start: str, end: str) -> pd.DataFrame:
+    """Hourly weather: the bundled CSV when it covers the period (offline, e.g. in the browser demo),
+    otherwise the Open-Meteo archive API."""
+    if WEATHER_CSV.exists():
+        df = pd.read_csv(WEATHER_CSV, parse_dates=["timestamp"])
+        if df["timestamp"].min() <= pd.Timestamp(start) and df["timestamp"].max() >= pd.Timestamp(end):
+            return df
+    return fetch_weather(start, end)
 
 
 def holiday_calendar(start: str, end: str) -> pd.DataFrame:

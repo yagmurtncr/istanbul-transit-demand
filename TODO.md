@@ -33,7 +33,8 @@ Repo gizli. Herkese açık yapmadan önce bu dosyayı İngilizceye çevir veya k
 - [ ] Hata analizi: model en çok hangi saatlerde/günlerde yanılıyor?
 - [x] Okul takvimi özelliği (`SCHOOL_BREAKS`, MEB 2023–2024) + okul tatili etkisi testi
 - [ ] Okul tatili tarihlerini MEB'in resmî takvimiyle tekrar doğrula; üniversite takvimini de ekle
-- [ ] Gece saatlerinde sMAPE yüksek: log1p hedef veya metro kapalı saatler için kural dene
+- [x] Kayıp fonksiyonu karşılaştırması: Poisson kaybı en iyi (raylı WAPE %10,1 → %9,4; otobüs %8,8 → %8,1); log1p ve derin ağaçlar daha kötü
+- [ ] Gece saatlerinde sMAPE hâlâ yüksek (çok küçük sayılar): metro kapalı saatler için kural dene
 - [ ] (Opsiyonel) Hat bazında tahmine genişlet
 
 ## Faz 4 — MLOps ve Cloud (4. hafta)
@@ -45,11 +46,12 @@ Repo gizli. Herkese açık yapmadan önce bu dosyayı İngilizceye çevir veya k
 - [ ] Basit model izleme: günlük hata metriğini kaydet, eşik aşılırsa uyar
 
 ## Faz 5 — Sunum (5. hafta)
-- [ ] Streamlit dashboard: "Yarın saat 08:00'de raylı sistemde kaç yolcu bekleniyor?"
-- [ ] Dashboard'u yayına al ve linkini README'ye ekle
+- [x] Streamlit dashboard (`app/streamlit_app.py`): gün seç → o güne kadarki veriyle eğit → 24 saati tahmin et, gerçekle ve geçen haftayla karşılaştır
+- [ ] Dashboard'u yayına al (Hugging Face Spaces veya Streamlit Community Cloud) ve linkini README'ye ekle
 - [ ] README: mimari diyagramı, sonuç grafikleri, sınırlamalar
 - [ ] Medium yazısı (Türkçe veya İngilizce)
-- [ ] Repoyu herkese açık yap, pin'le, CV'ye ve portfolyoya ekle
+- [x] Repoyu herkese açık yap; veri setini Hugging Face ve Kaggle'da yayınla
+- [ ] Repoyu profilde pin'le, CV'ye ve portfolyoya ekle
 
 ## CV maddesi (bittiğinde metrikle güncelle)
 > Built an end-to-end demand forecasting system for Istanbul public transport on İBB open data (Pandas, scikit-learn, XGBoost, SHAP); quantified weather and holiday effects with bootstrap tests; automated daily retraining with MLflow, Docker, GitHub Actions and AWS; reduced WAPE by __% over a seasonal-naive baseline.

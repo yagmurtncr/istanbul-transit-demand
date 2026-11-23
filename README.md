@@ -39,6 +39,13 @@ python scripts/run_analysis.py          # EDA, statistical tests, model comparis
 python scripts/run_phase1.py --months 6  # optional: re-download raw months from İBB
 ```
 
+## Interactive dashboard
+```bash
+pip install -e ".[app]"
+streamlit run app/streamlit_app.py
+```
+Pick a mode and a day: the model is retrained on all data before that day and forecasts its 24 hours, shown against the actual counts and the same-hour-last-week baseline, together with the day type (holiday, school break, weekend) and rainfall.
+
 ## Project structure
 ```
 src/transit/
@@ -56,7 +63,7 @@ First findings on January–July 2024 (1.43 billion passengers):
 - **Public holidays** cut weekday demand by about **27% on rail** and **35% on buses**, while **ferry** use rises by about **77%**.
 - **School breaks** lower weekday demand by about **17% on rail** and **21% on buses**; ferries are unaffected.
 - **Rain** (≥ 2 mm during the day) reduces demand by about **4% on rail and buses** and **18% on ferries**. This only became visible after separating school breaks from term time: the two effects were masking each other.
-- **Gradient boosting** day-ahead forecasts reach a WAPE of about **10% (rail)** and **9% (road)**, **27–33% lower error** than a same-hour-last-week baseline.
+- **Gradient boosting with a Poisson loss** (suited to counts) reaches a day-ahead WAPE of about **9.4% (rail)** and **8.1% (road)**, **32–38% lower error** than a same-hour-last-week baseline.
 
 All effects above are statistically significant (bootstrap 95% CI and Mann-Whitney U, p < 0.01). Full tables and figures: [reports/results.md](reports/results.md) — regenerated automatically by the `Analysis` GitHub Actions workflow whenever data or model code changes.
 

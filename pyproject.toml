@@ -15,7 +15,8 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "ruff>=0.4", "jupyter>=1.0", "tabulate>=0.9"]
-mlops = ["mlflow>=2.12", "streamlit>=1.35"]
+mlops = ["mlflow>=2.12"]
+app = ["streamlit>=1.35", "plotly>=5.20"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

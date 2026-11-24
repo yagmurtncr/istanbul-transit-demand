@@ -1,6 +1,6 @@
 # Results (İBB data, January–July 2024)
 
-Data: 15,336 hourly rows, 213 days, 1.43 billion recorded passengers (rail 625 M, road 769 M, sea 38 M).
+Data: 67,896 hourly rows, 943 days, 6.07 billion recorded passengers (rail 2,555 M, road 3,347 M, sea 170 M).
 Weather: Open-Meteo hourly archive for central Istanbul. Holidays: `holidays` package (incl. eves). School breaks: MEB calendar (`SCHOOL_BREAKS`).
 
 ## Demand patterns
@@ -15,9 +15,9 @@ Working days only (Mon–Fri, excluding holiday eves; rain and holiday tests als
 
 | Mode | Rain effect | Public-holiday effect | School-break effect |
 |---|---|---|---|
-| rail | -4.0% (95% CI -6.4% to -1.5%, p=0.005, significant; n=22 vs 57) | -27.4% (95% CI -34.3% to -19.7%, p=0.000, significant; n=10 vs 102) | -17.0% (95% CI -19.4% to -14.8%, p=0.000, significant; n=40 vs 102) |
-| road | -4.3% (95% CI -6.2% to -2.3%, p=0.000, significant; n=22 vs 57) | -35.0% (95% CI -39.5% to -29.6%, p=0.000, significant; n=10 vs 102) | -20.6% (95% CI -23.0% to -18.4%, p=0.000, significant; n=40 vs 102) |
-| sea | -17.9% (95% CI -24.7% to -10.8%, p=0.000, significant; n=22 vs 57) | +76.9% (95% CI +40.8% to +107.4%, p=0.000, significant; n=10 vs 102) | +2.4% (95% CI -2.3% to +7.2%, p=0.260, not significant; n=40 vs 102) |
+| rail | -4.8% (95% CI -7.6% to -1.9%, p=0.003, significant; n=84 vs 273) | -21.3% (95% CI -25.9% to -16.6%, p=0.000, significant; n=25 vs 446) | -14.6% (95% CI -16.3% to -13.1%, p=0.000, significant; n=198 vs 446) |
+| road | -6.0% (95% CI -8.1% to -4.0%, p=0.000, significant; n=84 vs 273) | -29.2% (95% CI -33.0% to -25.6%, p=0.000, significant; n=25 vs 446) | -17.5% (95% CI -18.8% to -16.3%, p=0.000, significant; n=198 vs 446) |
+| sea | -21.8% (95% CI -25.7% to -17.8%, p=0.000, significant; n=84 vs 273) | +89.9% (95% CI +71.8% to +106.6%, p=0.000, significant; n=25 vs 446) | +5.1% (95% CI +2.0% to +8.2%, p=0.000, significant; n=198 vs 446) |
 
 ![Effects](figures/effects.png)
 
@@ -27,21 +27,21 @@ Expanding-window walk-forward validation, 4 folds × 14 days. All lag features e
 
 ### Rail (metro, Marmaray, tram)
 
-| model                      |     MAE |   sMAPE |   WAPE |   WAPE vs naive |
-|:---------------------------|--------:|--------:|-------:|----------------:|
-| Gradient boosting          | 10246.7 |   27.19 |   9.37 |          -32.08 |
-| XGBoost                    | 10888.5 |   27.13 |   9.97 |          -27.74 |
-| Ridge                      | 14018.2 |   46.2  |  12.84 |           -6.98 |
-| Seasonal naive (last week) | 15109.4 |   23.39 |  13.8  |            0    |
+| model                      |      MAE |   sMAPE |   WAPE |   WAPE vs naive |
+|:---------------------------|---------:|--------:|-------:|----------------:|
+| Gradient boosting          |  6093.66 |   26.35 |   5.58 |          -59.56 |
+| XGBoost                    |  6240.68 |   26.46 |   5.71 |          -58.63 |
+| Ridge                      | 12862.9  |   46.17 |  11.76 |          -14.81 |
+| Seasonal naive (last week) | 15109.4  |   23.39 |  13.8  |            0    |
 
 ### Road (bus, metrobus)
 
-| model                      |     MAE |   sMAPE |   WAPE |   WAPE vs naive |
-|:---------------------------|--------:|--------:|-------:|----------------:|
-| Gradient boosting          | 10492   |    9.43 |   8.07 |          -38.35 |
-| XGBoost                    | 10481.5 |    9.3  |   8.09 |          -38.24 |
-| Ridge                      | 16046.2 |   42.62 |  12.33 |           -5.86 |
-| Seasonal naive (last week) | 17051.2 |   13.32 |  13.09 |            0    |
+| model                      |      MAE |   sMAPE |   WAPE |   WAPE vs naive |
+|:---------------------------|---------:|--------:|-------:|----------------:|
+| XGBoost                    |  6114.68 |    5.92 |   4.68 |          -64.23 |
+| Gradient boosting          |  6726.3  |    6.53 |   5.15 |          -60.69 |
+| Ridge                      | 15078.3  |   36.81 |  11.56 |          -11.68 |
+| Seasonal naive (last week) | 17051.2  |   13.32 |  13.09 |            0    |
 
 ![Forecast](figures/forecast_rail.png)
 

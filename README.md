@@ -1,6 +1,6 @@
 # Istanbul Public Transport: Analytics & Demand Forecasting
 
-[![Live demo](https://img.shields.io/badge/%E2%96%B6%20Live%20demo-Hugging%20Face%20Space-ff9d00)](https://huggingface.co/spaces/yagmurtuncer/istanbul-transit-demand) [![Hugging Face dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-Hugging%20Face-yellow)](https://huggingface.co/datasets/yagmurtuncer/istanbul-public-transport-hourly-2024) [![Kaggle dataset](https://img.shields.io/badge/Dataset-Kaggle-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/nuryamurtuncer/istanbul-public-transport-hourly-passengers-2024)
+[![Live demo](https://img.shields.io/badge/%E2%96%B6%20Live%20demo-Hugging%20Face%20Space-ff9d00)](https://huggingface.co/spaces/yagmurtuncer/istanbul-transit-demand) [![Hugging Face model](https://img.shields.io/badge/%F0%9F%A4%97%20Model-Hugging%20Face-yellow)](https://huggingface.co/yagmurtuncer/istanbul-transit-demand-gbm) [![Hugging Face dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-Hugging%20Face-yellow)](https://huggingface.co/datasets/yagmurtuncer/istanbul-public-transport-hourly-2024) [![Kaggle dataset](https://img.shields.io/badge/Dataset-Kaggle-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/nuryamurtuncer/istanbul-public-transport-hourly-passengers-2024)
 
 An end-to-end analytics and machine-learning project on **701.7 million rows** of Istanbul public transport data (January 2020 – October 2024, İBB Açık Veri Portalı): a **SQL star-schema warehouse** (DuckDB) with business marts, **statistical analysis** of what moves demand, and **day-ahead hourly forecasts** you can try in a live demo.
 
@@ -13,7 +13,7 @@ An end-to-end analytics and machine-learning project on **701.7 million rows** o
 | Who pays what? | 45% discounted type 1, 37% full fare, 14% free. A step change in October 2023 (+6 points discounted) splits revenue history in two. | [business insights](reports/business_insights.md) |
 | How should service change on special days? | Bridge days cut the median line by **33%**, religious holidays by **26%**, while Bosphorus ferries rise by up to **+161%**. | [business insights](reports/business_insights.md) |
 | What drives demand, all else equal? | Bridge days −31%, elections −30%, school breaks −8 to −11%, every 10 mm of rain −6% (ferries −22%). | [factors](reports/factors.md) |
-| Can we forecast tomorrow, hour by hour? | Yes: ~9–10% hourly error, 32–38% better than "same hour last week"; for Ramazan Bayramı 2024 the error fell from 40–44% to 11–15% once 2.5 years of history were used. | [results](reports/results.md), [live demo](https://huggingface.co/spaces/yagmurtuncer/istanbul-transit-demand) |
+| Can we forecast tomorrow, hour by hour? | Yes: the published models reach 5.6% (rail), 5.2% (road) and 8.7% (ferries) hourly error, about 60% better than "same hour last week"; for Ramazan Bayramı 2024 the error fell from 40–44% to 11–15% once 2.5 years of history were used. | [model](https://huggingface.co/yagmurtuncer/istanbul-transit-demand-gbm), [results](reports/results.md), [live demo](https://huggingface.co/spaces/yagmurtuncer/istanbul-transit-demand) |
 
 ## SQL warehouse (DuckDB)
 

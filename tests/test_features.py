@@ -44,3 +44,25 @@ def test_school_calendar():
     cal = holiday_calendar("2024-06-10", "2024-06-20").set_index("date")
     assert cal.loc["2024-06-14", "school_closed"] == 0      # last school day
     assert cal.loc["2024-06-17", "school_closed"] == 1      # summer break
+
+
+def test_bridge_and_election_days():
+    cal = holiday_calendar("2023-05-01", "2023-06-30").set_index("date")
+    assert cal.loc["2023-05-14", "is_election"] == 1
+    assert cal.loc["2023-06-26", "is_bridge"] == 1
+    assert cal.loc["2023-06-26", "is_holiday"] == 0
+
+
+def test_earthquake_extended_school_break():
+    cal = holiday_calendar("2023-02-01", "2023-02-28").set_index("date")
+    assert cal.loc["2023-02-15", "school_closed"] == 1
+    assert cal.loc["2023-02-20", "school_closed"] == 0
+
+
+def test_holiday_types_ramadan_and_half_days():
+    cal = holiday_calendar("2024-01-01", "2024-12-31").set_index("date")
+    assert cal.loc["2024-04-23", "is_national_holiday"] == 1      # 23 Nisan
+    assert cal.loc["2024-07-15", "is_national_holiday"] == 1      # 15 Temmuz
+    assert cal.loc["2024-06-17", "is_religious_holiday"] == 1     # Kurban Bayramı
+    assert cal.loc["2024-10-28", "is_half_day"] == 1
+    assert cal.loc["2024-03-20", "is_ramadan"] == 1 and cal.loc["2024-05-20", "is_ramadan"] == 0

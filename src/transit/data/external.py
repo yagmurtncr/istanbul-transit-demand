@@ -32,7 +32,7 @@ def fetch_weather(start: str, end: str) -> pd.DataFrame:
     return df
 
 
-WEATHER_CSV = Path(__file__).resolve().parents[3] / "data" / "aggregated" / "weather_istanbul_2024-01_2024-07.csv"
+WEATHER_CSV = Path(__file__).resolve().parents[3] / "data" / "aggregated" / "weather_istanbul_2022-01_2024-07.csv"
 
 
 def load_weather(start: str, end: str) -> pd.DataFrame:
@@ -76,17 +76,39 @@ def holiday_calendar(start: str, end: str) -> pd.DataFrame:
         "holiday_name": [str(tr.get(d, "")) for d in days],
         "is_eve": [int(d in eves) for d in days],
         "school_closed": [int(_school_closed(pd.Timestamp(d))) for d in days],
+        "is_religious_holiday": [int(is_religious(d)) for d in days],
+        "is_national_holiday": [int(d in tr and not is_arife(d) and not is_religious(d)) for d in days],
+        # half working days: religious eves (arife) and 28 Ekim, the eve of Republic Day
+        "is_half_day": [int(d in eves or (d.month == 10 and d.day == 28)) for d in days],
+        "is_ramadan": [int(any(pd.Timestamp(a) <= pd.Timestamp(d) <= pd.Timestamp(b) for a, b in RAMADAN))
+                       for d in days],
+        "is_bridge": [int(d.isoformat() in BRIDGE_DAYS) for d in days],
+        "is_election": [int(d.isoformat() in ELECTION_DAYS) for d in days],
     })
 
 
-# Primary/secondary school breaks (MEB çalışma takvimi). Extend when adding more years.
+# Primary/secondary school breaks, weekends included (MEB çalışma takvimleri 2021-22, 2022-23, 2023-24).
 SCHOOL_BREAKS = [
+    ("2022-01-22", "2022-02-06"),   # semester break 2021-22
+    ("2022-04-09", "2022-04-17"),   # 2nd mid-term break
+    ("2022-06-18", "2022-09-11"),   # summer 2022
+    ("2022-11-12", "2022-11-20"),   # 1st mid-term break 2022-23
+    ("2023-01-21", "2023-02-19"),   # semester break, extended nationwide after the 6 Feb 2023 earthquakes
+    ("2023-04-15", "2023-04-23"),   # 2nd mid-term break + Ramazan Bayramı
     ("2023-06-17", "2023-09-10"),   # summer 2023
-    ("2023-11-13", "2023-11-17"),   # 1st mid-term break
+    ("2023-11-11", "2023-11-19"),   # 1st mid-term break 2023-24
     ("2024-01-20", "2024-02-04"),   # semester break
     ("2024-04-06", "2024-04-14"),   # 2nd mid-term break (with Ramazan Bayramı)
     ("2024-06-15", "2024-09-08"),   # summer 2024
 ]
+
+# Administrative leave for public employees that turned a bayram into a 9-day holiday ("köprü" days).
+BRIDGE_DAYS = ["2022-07-13", "2022-07-14", "2023-06-26", "2023-06-27", "2024-04-08", "2024-04-09",
+               "2024-06-20", "2024-06-21"]
+# Ramazan (fasting month, Diyanet): evening demand shifts around iftar.
+RAMADAN = [("2022-04-02", "2022-05-01"), ("2023-03-23", "2023-04-20"), ("2024-03-11", "2024-04-09")]
+# National elections (presidential / parliamentary / local).
+ELECTION_DAYS = ["2023-05-14", "2023-05-28", "2024-03-31"]
 
 
 def _school_closed(day: pd.Timestamp) -> bool:

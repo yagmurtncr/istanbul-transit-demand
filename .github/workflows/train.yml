@@ -1,0 +1,35 @@
+name: Train model
+
+# Retrains the final day-ahead models on all complete data and commits them to models/
+# (published to the Hugging Face Hub as yagmurtuncer/istanbul-transit-demand-gbm).
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/train_final.py"
+      - "data/aggregated/**"
+      - "src/transit/features/**"
+      - "src/transit/models/**"
+
+permissions:
+  contents: write
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -e . skops
+      - run: python scripts/train_final.py
+      - name: Commit models
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add models
+          git diff --cached --quiet && exit 0
+          git commit -m "Update trained models [skip ci]"
+          git pull --rebase
+          git push

@@ -1,0 +1,428 @@
+station,mode_label,main_line,passengers,rank
+YENIKAPI,"Rail (metro, Marmaray, tram, funicular)",M1,21189837.0,1
+SISLI 2 KUZEY,"Rail (metro, Marmaray, tram, funicular)",M2,19886803.0,2
+MECIDIYEKOY,"Road (bus, metrobus)",34,19471574.0,3
+YENIKAPI-2,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,19228025.0,4
+MECIDIYEKOY BATI,"Rail (metro, Marmaray, tram, funicular)",M7,15363658.0,5
+USKUDAR,Sea (ferries),DT-İST,13575346.0,6
+YENIKAPI KUZEY,"Rail (metro, Marmaray, tram, funicular)",M2,13289227.0,7
+SOUTLUCESME 1,"Road (bus, metrobus)",34A,13081255.0,8
+AKSARAY,"Rail (metro, Marmaray, tram, funicular)",T1,12604183.0,9
+AYRILIKCESMESI,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,12331146.0,10
+UZUNCAYIR 2,"Road (bus, metrobus)",34A,12231725.0,11
+ZINCIRLIKUYU 2,"Road (bus, metrobus)",34,12174856.0,12
+USKUDAR 1,"Rail (metro, Marmaray, tram, funicular)",M5,12061731.0,13
+TAKSIM GUNEY,"Rail (metro, Marmaray, tram, funicular)",M2,12042750.0,14
+SIRINEVLER 1,"Road (bus, metrobus)",34,12037440.0,15
+USKUDAR-1,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,12010232.0,16
+CEVIZLIBAG,"Road (bus, metrobus)",34,11918562.0,17
+ALTUNIZADE 2,"Road (bus, metrobus)",34A,11880242.0,18
+ZEYTINBURNU,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,11421554.0,19
+YENIKAPI GUNEY,"Rail (metro, Marmaray, tram, funicular)",M2,10876035.0,20
+AVCILAR MRK.UNV.KAMP.,"Road (bus, metrobus)",34,10658088.0,21
+TOPKAPI,"Rail (metro, Marmaray, tram, funicular)",T4,10457011.0,22
+KOZYATAGI,"Rail (metro, Marmaray, tram, funicular)",M4,10338345.0,23
+GAYRETTEPE,"Rail (metro, Marmaray, tram, funicular)",M2,10272250.0,24
+ATAKOY,"Rail (metro, Marmaray, tram, funicular)",M1,10077520.0,25
+YENIBOSNA,"Road (bus, metrobus)",34,10031809.0,26
+AYRILIKCESME,"Rail (metro, Marmaray, tram, funicular)",M4,9815207.0,27
+KARTALTEPE,"Rail (metro, Marmaray, tram, funicular)",M1,9802151.0,28
+SOGUTLUCESME,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,9637933.0,29
+MALTEPE,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,9534888.0,30
+ZEYTINBURNU 2,"Rail (metro, Marmaray, tram, funicular)",T1,9485536.0,31
+ATATURK OGRENCI YURDU,"Rail (metro, Marmaray, tram, funicular)",T1,9445041.0,32
+DUDULLU,"Rail (metro, Marmaray, tram, funicular)",M5,9351358.0,33
+KADIKOY (DOGU),"Rail (metro, Marmaray, tram, funicular)",M4,9187739.0,34
+BEYLIKDUZU SONDURAK,"Road (bus, metrobus)",34,8930164.0,35
+BESIKTAS,Sea (ferries),DT-İST,8708935.0,36
+ZEYTINBURNU,"Road (bus, metrobus)",34,8546190.0,37
+SIRKECI-1,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,8535611.0,38
+ZINCIRLIKUYU 1,"Road (bus, metrobus)",34,8519380.0,39
+KIRAZLI,"Rail (metro, Marmaray, tram, funicular)",M1,8486789.0,40
+SEFAKOY,"Road (bus, metrobus)",34,8479346.0,41
+YENIMAHALLE,"Rail (metro, Marmaray, tram, funicular)",T4,8458652.0,42
+UNALAN,"Rail (metro, Marmaray, tram, funicular)",M4,8240718.0,43
+OSMANBEY KUZEY,"Rail (metro, Marmaray, tram, funicular)",M2,8097592.0,44
+YENIKAPI-1,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,7964612.0,45
+OSMANBEY 2 GUNEY,"Rail (metro, Marmaray, tram, funicular)",M2,7955997.0,46
+EDIRNEKAPI,"Road (bus, metrobus)",34,7874044.0,47
+CEKMEKOY 2,"Rail (metro, Marmaray, tram, funicular)",M5,7696570.0,48
+KARAKOY,"Rail (metro, Marmaray, tram, funicular)",T1,7625724.0,49
+BEYLIKDUZU,"Road (bus, metrobus)",34,7605189.0,50
+GOZTEPE,"Rail (metro, Marmaray, tram, funicular)",M4,7597387.0,51
+SAGMALCILAR,"Rail (metro, Marmaray, tram, funicular)",M1,7537817.0,52
+USKUDAR-2,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,7466635.0,53
+LEVENT GUNEY,"Rail (metro, Marmaray, tram, funicular)",M2,7060224.0,54
+ALTUNIZADE 1,"Rail (metro, Marmaray, tram, funicular)",M5,6958986.0,55
+BEYAZIT,"Rail (metro, Marmaray, tram, funicular)",T1,6949948.0,56
+BEYKENT,"Road (bus, metrobus)",34,6831490.0,57
+CARSI,"Rail (metro, Marmaray, tram, funicular)",M5,6653791.0,58
+BAHCELIEVLER,"Road (bus, metrobus)",34,6620106.0,59
+LEVENT 2 KUZEY,"Rail (metro, Marmaray, tram, funicular)",M2,6579506.0,60
+EMINONU 2,"Rail (metro, Marmaray, tram, funicular)",T1,6477531.0,61
+UMRANIYE,"Rail (metro, Marmaray, tram, funicular)",M5,6421702.0,62
+BAGCILAR MEYDAN,"Rail (metro, Marmaray, tram, funicular)",M1,6397849.0,63
+SIRKECI,"Rail (metro, Marmaray, tram, funicular)",T1,6396565.0,64
+PENDIK,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,6390679.0,65
+SISLI GUNEY,"Rail (metro, Marmaray, tram, funicular)",M2,6139596.0,66
+EMNIYET,"Rail (metro, Marmaray, tram, funicular)",M1,6129107.0,67
+BAKIRKOY-2,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,5973433.0,68
+HARAMIDERE,"Road (bus, metrobus)",34,5922941.0,69
+HACIOSMAN,"Rail (metro, Marmaray, tram, funicular)",M2,5867672.0,70
+BULGURLU,"Rail (metro, Marmaray, tram, funicular)",M5,5702090.0,71
+INCIRLI,"Road (bus, metrobus)",34,5689974.0,72
+BESYOL,"Road (bus, metrobus)",34,5531504.0,73
+YUSUFPASA,"Rail (metro, Marmaray, tram, funicular)",T1,5499085.0,74
+4 LEVENT KUZEY,"Rail (metro, Marmaray, tram, funicular)",M2,5385949.0,75
+SULTANAHMET,"Rail (metro, Marmaray, tram, funicular)",T1,5375174.0,76
+MUSTAFA KEMAL PASA,"Road (bus, metrobus)",34,5348582.0,77
+USKUDAR 2,"Rail (metro, Marmaray, tram, funicular)",M5,5313670.0,78
+SIRKECI-4,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,5290467.0,79
+CAKMAK,"Rail (metro, Marmaray, tram, funicular)",M5,5189269.0,80
+KUCUKCEKMECE,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,5169380.0,81
+MENDERES,"Rail (metro, Marmaray, tram, funicular)",M1,5109331.0,82
+CAGLAYAN,"Road (bus, metrobus)",34,5102913.0,83
+CAPA,"Rail (metro, Marmaray, tram, funicular)",T1,4975781.0,84
+SUADIYE,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,4957066.0,85
+CIHANGIR UNIVERSITE MAH.,"Road (bus, metrobus)",34,4930846.0,86
+ITU GUNEY,"Rail (metro, Marmaray, tram, funicular)",M2,4779347.0,87
+UCYUZLU,"Rail (metro, Marmaray, tram, funicular)",M1,4745230.0,88
+KARADENIZ MAH. BATI,"Rail (metro, Marmaray, tram, funicular)",M7,4725068.0,89
+HARAMIDERE SANAYI SITESI,"Road (bus, metrobus)",34,4711354.0,90
+SEHITLIK,"Rail (metro, Marmaray, tram, funicular)",T4,4642486.0,91
+ULUBATLI,"Rail (metro, Marmaray, tram, funicular)",M1,4573551.0,92
+KAZIMKARABEKIR,"Rail (metro, Marmaray, tram, funicular)",M7,4443620.0,93
+ESENLER,"Rail (metro, Marmaray, tram, funicular)",M1,4436809.0,94
+KARAKOY,Sea (ferries),KARAKOY-Y.KDK,4415924.0,95
+ERENKOY,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,4388525.0,96
+DARULACEZE PERPA,"Road (bus, metrobus)",34,4356335.0,97
+KUCUKCEKMECE,"Road (bus, metrobus)",34,4331649.0,98
+KAZLICESME,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,4319259.0,99
+CUMHURIYET MAHALLESI,"Road (bus, metrobus)",34,4312952.0,100
+ALI FUAT BASGIL,"Rail (metro, Marmaray, tram, funicular)",T4,4298775.0,101
+CEMBERLITAS,"Rail (metro, Marmaray, tram, funicular)",T1,4262691.0,102
+HALKALI,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,4260078.0,103
+KARTAL,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,4255947.0,104
+MERTER,"Road (bus, metrobus)",34,4231837.0,105
+LALELI,"Rail (metro, Marmaray, tram, funicular)",T1,4206202.0,106
+KUCUKYALI,"Rail (metro, Marmaray, tram, funicular)",M4,4197419.0,107
+SISHANE KUZEY,"Rail (metro, Marmaray, tram, funicular)",M2,4187724.0,108
+SULTANCIFTLIGI,"Rail (metro, Marmaray, tram, funicular)",T4,4165864.0,109
+GUNGOREN,"Rail (metro, Marmaray, tram, funicular)",T1,4141940.0,110
+AKSEMSETTIN,"Rail (metro, Marmaray, tram, funicular)",T1,4088037.0,111
+FINDIKZADE,"Rail (metro, Marmaray, tram, funicular)",T1,3978216.0,112
+BOSTANCI-1,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,3974315.0,113
+ITU KUZEY,"Rail (metro, Marmaray, tram, funicular)",M2,3970919.0,114
+4 LEVENT 2 GUNEY,"Rail (metro, Marmaray, tram, funicular)",M2,3969694.0,115
+SISHANE GUNEY,"Rail (metro, Marmaray, tram, funicular)",M2,3887443.0,116
+KABATAS 2,"Rail (metro, Marmaray, tram, funicular)",T1,3855691.0,117
+SUKRUBEY,"Road (bus, metrobus)",34,3845943.0,118
+TERAZIDERE,"Rail (metro, Marmaray, tram, funicular)",M1,3828036.0,119
+BAGLARBASI,"Rail (metro, Marmaray, tram, funicular)",M5,3820675.0,120
+BAYRAMPASA,"Rail (metro, Marmaray, tram, funicular)",M1,3746029.0,121
+VEZNECILER GUNEY,"Rail (metro, Marmaray, tram, funicular)",M2,3674283.0,122
+ESENKENT CEVIZLI,"Rail (metro, Marmaray, tram, funicular)",M4,3664892.0,123
+GUZELYURT,"Road (bus, metrobus)",34,3650151.0,124
+BEREC,"Rail (metro, Marmaray, tram, funicular)",T4,3649775.0,125
+CENNET MAHALLESI,"Road (bus, metrobus)",34,3641539.0,126
+OKMEYDANI,"Road (bus, metrobus)",34,3616907.0,127
+MESCIDI SELAM,"Rail (metro, Marmaray, tram, funicular)",T4,3601514.0,128
+FENERYOLU,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,3595942.0,129
+EMINONU USKUDAR KADIKOY,Sea (ferries),EMINONU-USK,3592760.0,130
+BAGCILAR,"Rail (metro, Marmaray, tram, funicular)",T1,3584299.0,131
+YAMANEVLER,"Rail (metro, Marmaray, tram, funicular)",M5,3570814.0,132
+ALTUNIZADE 2,"Rail (metro, Marmaray, tram, funicular)",M5,3562044.0,133
+KAGITHANE DOGU,"Rail (metro, Marmaray, tram, funicular)",M7,3448643.0,134
+HALICIOGLU,"Road (bus, metrobus)",34,3439925.0,135
+KADIKOY YENI,Sea (ferries),Y.KADIKOY-KRK,3424063.0,136
+HALIC GUNEY,"Rail (metro, Marmaray, tram, funicular)",M2,3391942.0,137
+MERTER,"Rail (metro, Marmaray, tram, funicular)",M1,3342816.0,138
+KADIKOY ESKI,Sea (ferries),E.KADIKOY-BSK,3337575.0,139
+CEKMEKOY 1,"Rail (metro, Marmaray, tram, funicular)",M5,3318721.0,140
+TAVSANTEPE (DOGU),"Rail (metro, Marmaray, tram, funicular)",M4,3310202.0,141
+SOGANLIK,"Rail (metro, Marmaray, tram, funicular)",M4,3270264.0,142
+BEYLIKDUZU BELEDIYESI,"Road (bus, metrobus)",34,3247004.0,143
+YENISAHRA,"Rail (metro, Marmaray, tram, funicular)",M4,3244156.0,144
+SABIHA GOKCEN,"Rail (metro, Marmaray, tram, funicular)",M4,3231448.0,145
+SAADETDERE MAHALLESI,"Road (bus, metrobus)",34,3230933.0,146
+BAKIRKOY-1,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,3222674.0,147
+KIPTAS VENEZIA,"Rail (metro, Marmaray, tram, funicular)",T4,3219634.0,148
+DAVUTPASA,"Rail (metro, Marmaray, tram, funicular)",M1,3212138.0,149
+HUZUREVI,"Rail (metro, Marmaray, tram, funicular)",M4,3185731.0,150
+NECIP FAZIL,"Rail (metro, Marmaray, tram, funicular)",M5,3185551.0,151
+KABATAS,"Rail (metro, Marmaray, tram, funicular)",F1,3183426.0,152
+TASKOPRU,"Rail (metro, Marmaray, tram, funicular)",T4,3176074.0,153
+ALIBEYKOY BATI,"Rail (metro, Marmaray, tram, funicular)",M7,3103477.0,154
+BAYRAMPASA MALTEPE,"Road (bus, metrobus)",34,3087773.0,155
+KAGITHANE BATI,"Rail (metro, Marmaray, tram, funicular)",M7,3065184.0,156
+M4 KURTKOY,"Rail (metro, Marmaray, tram, funicular)",M4,3056660.0,157
+TOPHANE,"Rail (metro, Marmaray, tram, funicular)",T1,3056036.0,158
+KADIKOY CAYIRBASI,Sea (ferries),KADIKOY-EMN,3045897.0,159
+MAHMUTBEY M3 HOL 4,"Rail (metro, Marmaray, tram, funicular)",M7,3029249.0,160
+USKUDAR-3,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,3025849.0,161
+HACISUKRU,"Rail (metro, Marmaray, tram, funicular)",T4,3013428.0,162
+SUREYYA PLAJI,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,3013064.0,163
+KADIKOY (BATI),"Rail (metro, Marmaray, tram, funicular)",M4,2965698.0,164
+CAGLAYAN BATI,"Rail (metro, Marmaray, tram, funicular)",M7,2941211.0,165
+AYVANSARAY EYUP SULTAN,"Road (bus, metrobus)",34,2927878.0,166
+IHLAMUR KUYU,"Rail (metro, Marmaray, tram, funicular)",M5,2876637.0,167
+SOGANLI,"Rail (metro, Marmaray, tram, funicular)",T1,2874995.0,168
+VATAN,"Rail (metro, Marmaray, tram, funicular)",T4,2872891.0,169
+OKMEYDANI HASTANE,"Road (bus, metrobus)",34,2840107.0,170
+BOSTANCI,"Rail (metro, Marmaray, tram, funicular)",M8,2837329.0,171
+FLORYA AQUA,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,2779271.0,172
+OTOGAR 1,"Rail (metro, Marmaray, tram, funicular)",M1,2779065.0,173
+LEVENT DOGU KONKORS,"Rail (metro, Marmaray, tram, funicular)",M6,2767295.0,174
+YENI KABATAS,Sea (ferries),KABATAS-ADA,2762508.0,175
+ALTINSEHIR,"Rail (metro, Marmaray, tram, funicular)",M5,2741593.0,176
+HASTANE (BATI),"Rail (metro, Marmaray, tram, funicular)",M4,2730755.0,177
+GEBZE-1,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,2722989.0,178
+MAHMUTBEY M7 HOL 3,"Rail (metro, Marmaray, tram, funicular)",M3,2713546.0,179
+IBB SOSYAL TESISLER,"Road (bus, metrobus)",34,2694959.0,180
+YESILPINAR,"Rail (metro, Marmaray, tram, funicular)",M7,2682035.0,181
+ATALAR,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,2660042.0,182
+KUCUKYALI-1,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,2643774.0,183
+BOSTANCI (BATI),"Rail (metro, Marmaray, tram, funicular)",M4,2626124.0,184
+VEYSELKARANI BATI,"Rail (metro, Marmaray, tram, funicular)",M7,2585598.0,185
+CUKURCESME,"Rail (metro, Marmaray, tram, funicular)",T4,2559829.0,186
+BAHCELIEVLER,"Rail (metro, Marmaray, tram, funicular)",M1,2558367.0,187
+VEZNECILER KUZEY,"Rail (metro, Marmaray, tram, funicular)",M2,2548021.0,188
+BAKIRKOY,"Rail (metro, Marmaray, tram, funicular)",M1,2515934.0,189
+IKITELLI SANAYI,"Rail (metro, Marmaray, tram, funicular)",M3,2495420.0,190
+OLIMPIYAT BATI,"Rail (metro, Marmaray, tram, funicular)",M9,2479338.0,191
+BUYUKADA,Sea (ferries),ADALAR-KBT,2426533.0,192
+M.KEMAL,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,2401220.0,193
+IMAM HATIP LISESI,"Rail (metro, Marmaray, tram, funicular)",M5,2372745.0,194
+KARTAL (BATI),"Rail (metro, Marmaray, tram, funicular)",M4,2356824.0,195
+FEVZI CAKMAK,"Rail (metro, Marmaray, tram, funicular)",M4,2297053.0,196
+ICMELER,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,2285439.0,197
+ALIBEYKOY DOGU,"Rail (metro, Marmaray, tram, funicular)",M7,2264210.0,198
+RAMI,"Rail (metro, Marmaray, tram, funicular)",T4,2245139.0,199
+SEYRANTEPE 3 STAD GIRISI,"Rail (metro, Marmaray, tram, funicular)",M2,2217140.0,200
+BOSTANCI-2,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,2194033.0,201
+EMINONU KADIKOY,Sea (ferries),EMINONU-KDK,2191173.0,202
+GULHANE,"Rail (metro, Marmaray, tram, funicular)",T1,2175681.0,203
+OTOGAR,"Rail (metro, Marmaray, tram, funicular)",M1,2164630.0,204
+NURTEPE BATI,"Rail (metro, Marmaray, tram, funicular)",M7,2133976.0,205
+METRIS,"Rail (metro, Marmaray, tram, funicular)",T4,2115060.0,206
+BARBAROS,Sea (ferries),BARBAROS-E.KDK,2108197.0,207
+BASAK KONUTLARI,"Rail (metro, Marmaray, tram, funicular)",M3,2092266.0,208
+FIKIRTEPE,"Road (bus, metrobus)",34A,2077719.0,209
+AKSARAY 1,"Rail (metro, Marmaray, tram, funicular)",M1,2075938.0,210
+ALIBEYKOY METRO,"Rail (metro, Marmaray, tram, funicular)",T5,2046696.0,211
+BOGAZ KOPRUSU 2,"Road (bus, metrobus)",34A,2045234.0,212
+METROKENT,"Rail (metro, Marmaray, tram, funicular)",M3,2037512.0,213
+YENI MAHALLE,"Rail (metro, Marmaray, tram, funicular)",M3,2027583.0,214
+YESILKOY,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,2006904.0,215
+KAGITHANE,"Rail (metro, Marmaray, tram, funicular)",TCDD-GH,1984279.0,216
+CEBECI,"Rail (metro, Marmaray, tram, funicular)",T4,1951566.0,217
+GULSUYU,"Rail (metro, Marmaray, tram, funicular)",M4,1932682.0,218
+FLORYA,"Road (bus, metrobus)",34,1929926.0,219
+CEVIZLI-2,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,1925473.0,220
+BOSTANCI,Sea (ferries),MT-ADA,1910632.0,221
+MITHATPASA,"Rail (metro, Marmaray, tram, funicular)",T1,1894814.0,222
+SANAYI MAH. GUNEY,"Rail (metro, Marmaray, tram, funicular)",M2,1868901.0,223
+CIRCIR DOGU,"Rail (metro, Marmaray, tram, funicular)",M7,1858048.0,224
+CAMI,"Rail (metro, Marmaray, tram, funicular)",T1,1855882.0,225
+EMINONU,Sea (ferries),EMINONU-KDK,1842764.0,226
+KARADENIZ MAHALLESI,"Rail (metro, Marmaray, tram, funicular)",T4,1836027.0,227
+IDEALTEPE,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,1823751.0,228
+YENIBOSNA,"Rail (metro, Marmaray, tram, funicular)",M1,1808365.0,229
+PAZARTEKKE,"Rail (metro, Marmaray, tram, funicular)",T1,1807454.0,230
+GOZTEPE BATI,"Rail (metro, Marmaray, tram, funicular)",M7,1805679.0,231
+YAKACIK (DOGU),"Rail (metro, Marmaray, tram, funicular)",M4,1798518.0,232
+TUZLA,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,1792247.0,233
+ACIBADEM,"Road (bus, metrobus)",34A,1780070.0,234
+TAKSIM,"Rail (metro, Marmaray, tram, funicular)",F1,1778628.0,235
+SANAYI MAH. KUZEY,"Rail (metro, Marmaray, tram, funicular)",M2,1768126.0,236
+PENDIK (DOGU),"Rail (metro, Marmaray, tram, funicular)",M4,1761978.0,237
+MAHMUTBEY M7 HOL 2,"Rail (metro, Marmaray, tram, funicular)",M7,1709241.0,238
+MAHMUTBEY,"Rail (metro, Marmaray, tram, funicular)",M3,1707904.0,239
+MAHMUTBEY M7 HOL 4,"Rail (metro, Marmaray, tram, funicular)",M3,1698776.0,240
+FATIH,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,1698376.0,241
+DARUSSAFAKA,"Rail (metro, Marmaray, tram, funicular)",M2,1683823.0,242
+DEMIRKAPI,"Rail (metro, Marmaray, tram, funicular)",T4,1652681.0,243
+AKINCILAR,"Rail (metro, Marmaray, tram, funicular)",T1,1637520.0,244
+ATATURK OTO SANAYI GUNEY,"Rail (metro, Marmaray, tram, funicular)",M2,1626575.0,245
+YAYALAR,"Rail (metro, Marmaray, tram, funicular)",M4,1613214.0,246
+BOSTANCI (DOGU),"Rail (metro, Marmaray, tram, funicular)",M4,1610091.0,247
+EMINONU,"Rail (metro, Marmaray, tram, funicular)",T5,1548008.0,248
+AYDINTEPE,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,1479019.0,249
+BASAK,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,1468787.0,250
+ORUCREIS DOGU,"Rail (metro, Marmaray, tram, funicular)",M7,1466961.0,251
+KAYNARCA,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,1443259.0,252
+MERKEZEFENDI,"Rail (metro, Marmaray, tram, funicular)",T1,1436690.0,253
+BAHARIYE,"Rail (metro, Marmaray, tram, funicular)",M9,1415113.0,254
+YESILYURT,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,1409010.0,255
+BOGAZICI,"Rail (metro, Marmaray, tram, funicular)",M6,1408852.0,256
+PENDIK (BATI),"Rail (metro, Marmaray, tram, funicular)",M4,1408786.0,257
+TURGUT OZAL,"Rail (metro, Marmaray, tram, funicular)",M3,1408618.0,258
+MAHMUTBEY M3 HOL 3,"Rail (metro, Marmaray, tram, funicular)",M7,1401783.0,259
+KARADENIZ MAH. DOGU,"Rail (metro, Marmaray, tram, funicular)",M7,1374482.0,260
+TOPKAPI,"Road (bus, metrobus)",34,1360347.0,261
+MASKO,"Rail (metro, Marmaray, tram, funicular)",M9,1339499.0,262
+IDTM,"Rail (metro, Marmaray, tram, funicular)",M1,1329214.0,263
+YUNUS,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,1313645.0,264
+HASEKI,"Rail (metro, Marmaray, tram, funicular)",T1,1303493.0,265
+FISTIKAGACI,"Rail (metro, Marmaray, tram, funicular)",M5,1288680.0,266
+CIBALI,"Rail (metro, Marmaray, tram, funicular)",T5,1277098.0,267
+HAVALIMANI  (TERMINAL 1),"Rail (metro, Marmaray, tram, funicular)",TCDD-GH,1274406.0,268
+TEKSTILKENT,"Rail (metro, Marmaray, tram, funicular)",M7,1271169.0,269
+HALIC KUZEY,"Rail (metro, Marmaray, tram, funicular)",M2,1222925.0,270
+KISIKLI,"Rail (metro, Marmaray, tram, funicular)",M5,1217265.0,271
+BASTABYA,"Rail (metro, Marmaray, tram, funicular)",T4,1207928.0,272
+ISTOC,"Rail (metro, Marmaray, tram, funicular)",M3,1183292.0,273
+ICERENKOY,"Rail (metro, Marmaray, tram, funicular)",M8,1175705.0,274
+TOPCULAR,"Rail (metro, Marmaray, tram, funicular)",T4,1164508.0,275
+YENIKAPI-3,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,1162082.0,276
+SEHIR HASTANESI,"Rail (metro, Marmaray, tram, funicular)",M3,1142675.0,277
+OSMANGAZI,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,1134707.0,278
+ATATURK OTO SANAYI KUZEY,"Rail (metro, Marmaray, tram, funicular)",M2,1130889.0,279
+GUNESTEPE,"Rail (metro, Marmaray, tram, funicular)",T1,1107207.0,280
+CEP OTOGAR,"Rail (metro, Marmaray, tram, funicular)",T5,1103026.0,281
+HEYBELIADA,Sea (ferries),ADALAR-KBT,1093527.0,282
+KARTAL (DOGU),"Rail (metro, Marmaray, tram, funicular)",M4,1088045.0,283
+T4 KIPTAS VENEZIA,"Rail (metro, Marmaray, tram, funicular)",T4,1084275.0,284
+KERESTECILER,"Rail (metro, Marmaray, tram, funicular)",T1,1081431.0,285
+CEVIZLI-1,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,1068811.0,286
+UZUNCAYIR 1,"Road (bus, metrobus)",34A,1058158.0,287
+MEVLANA,"Rail (metro, Marmaray, tram, funicular)",M8,1054903.0,288
+FETIHKAPI,"Rail (metro, Marmaray, tram, funicular)",T4,1047255.0,289
+ACIBADEM (DOGU),"Rail (metro, Marmaray, tram, funicular)",M4,1042153.0,290
+SEYRANTEPE 1 BATI,"Rail (metro, Marmaray, tram, funicular)",M2,1025452.0,291
+KAYASEHIR MERKEZ,"Rail (metro, Marmaray, tram, funicular)",M3,1025376.0,292
+MEHMETAKIF,"Rail (metro, Marmaray, tram, funicular)",T1,1021744.0,293
+HASTANE (DOGU/ADLIYE),"Rail (metro, Marmaray, tram, funicular)",M4,1003577.0,294
+ZIYA GOKALP MAH.,"Rail (metro, Marmaray, tram, funicular)",M9,988540.0,295
+SITELER,"Rail (metro, Marmaray, tram, funicular)",M3,987241.0,296
+FLORYA,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,970920.0,297
+FINDIKLI,"Rail (metro, Marmaray, tram, funicular)",T1,970621.0,298
+GEBZE-2,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,964698.0,299
+ACIBADEM (BATI),"Rail (metro, Marmaray, tram, funicular)",M4,958100.0,300
+EDIRNEKAPI,"Rail (metro, Marmaray, tram, funicular)",T4,957860.0,301
+MECIDIYEKOY DOGU,"Rail (metro, Marmaray, tram, funicular)",M7,955311.0,302
+BEYOGLU,"Rail (metro, Marmaray, tram, funicular)",TUNEL,953408.0,303
+MAHMUTBEY M7 HOL 1,"Rail (metro, Marmaray, tram, funicular)",M7,950581.0,304
+GOZTEPE DOGU,"Rail (metro, Marmaray, tram, funicular)",M7,947938.0,305
+IMES,"Rail (metro, Marmaray, tram, funicular)",M8,942653.0,306
+TOPLU KONUTLAR,"Rail (metro, Marmaray, tram, funicular)",M3,932043.0,307
+EDIRNEKAPI 2,"Road (bus, metrobus)",34,914462.0,308
+CUMHURIYET,"Rail (metro, Marmaray, tram, funicular)",T4,907907.0,309
+ALIBEYKOY,"Rail (metro, Marmaray, tram, funicular)",T5,873265.0,310
+M7 YILDIZ 1,"Rail (metro, Marmaray, tram, funicular)",M7,869515.0,311
+ORUCREIS BATI,"Rail (metro, Marmaray, tram, funicular)",M7,853961.0,312
+KUCUKBAKKALKOY,"Rail (metro, Marmaray, tram, funicular)",M8,815025.0,313
+KADIKOY BALON,Sea (ferries),KADIKOY-EMN,799121.0,314
+TERSANE-1,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,793157.0,315
+TAVSANTEPE (BATI),"Rail (metro, Marmaray, tram, funicular)",M4,789105.0,316
+GUZELYALI,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,787131.0,317
+FLORYA 2,"Road (bus, metrobus)",34,783108.0,318
+KARTAL,Sea (ferries),PT-ADA,771147.0,319
+FESHANE,"Rail (metro, Marmaray, tram, funicular)",T5,770623.0,320
+KINALIADA,Sea (ferries),ADALAR-KBT,761146.0,321
+DARICA,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,736045.0,322
+ETILER,"Rail (metro, Marmaray, tram, funicular)",M6,721401.0,323
+AYSEKADIN,"Rail (metro, Marmaray, tram, funicular)",M8,720500.0,324
+EYUP TELEFERIK,"Rail (metro, Marmaray, tram, funicular)",T5,700120.0,325
+UNIVERSITE,"Rail (metro, Marmaray, tram, funicular)",T5,696941.0,326
+ASIYAN,"Rail (metro, Marmaray, tram, funicular)",F4,673428.0,327
+SILAHTARAGA,"Rail (metro, Marmaray, tram, funicular)",T5,669705.0,328
+SIRKECI-3,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,669523.0,329
+KAYISDAGI,"Rail (metro, Marmaray, tram, funicular)",M8,631930.0,330
+TERSANE-2,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,630328.0,331
+EYUP DEVLET HASTANESI,"Rail (metro, Marmaray, tram, funicular)",T5,621008.0,332
+NISPETIYE,"Rail (metro, Marmaray, tram, funicular)",M6,618876.0,333
+BURGAZADA,Sea (ferries),ADALAR-KBT,592538.0,334
+BALAT,"Rail (metro, Marmaray, tram, funicular)",T5,591777.0,335
+GOKTURK,"Rail (metro, Marmaray, tram, funicular)",TCDD-GH,586290.0,336
+M7 YILDIZ 2,"Rail (metro, Marmaray, tram, funicular)",M7,584777.0,337
+HUZUR,"Rail (metro, Marmaray, tram, funicular)",M8,579872.0,338
+FENER,"Rail (metro, Marmaray, tram, funicular)",T5,561149.0,339
+SEYRANTEPE 2 DOGU,"Rail (metro, Marmaray, tram, funicular)",M2,558335.0,340
+YAKACIK (BATI),"Rail (metro, Marmaray, tram, funicular)",M4,557071.0,341
+CAGLAYAN DOGU,"Rail (metro, Marmaray, tram, funicular)",M7,546885.0,342
+MODOKO,"Rail (metro, Marmaray, tram, funicular)",M8,544171.0,343
+KUCUKPAZAR,"Rail (metro, Marmaray, tram, funicular)",T5,541428.0,344
+ORTAKOY,Sea (ferries),BOGAZ,535161.0,345
+VEYSELKARANI DOGU,"Rail (metro, Marmaray, tram, funicular)",M7,526231.0,346
+EYUP,"Rail (metro, Marmaray, tram, funicular)",TF2,514738.0,347
+RUMELI HISARUSTU,"Rail (metro, Marmaray, tram, funicular)",F4,504206.0,348
+SIRKECI-2,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,496252.0,349
+ONURKENT,"Rail (metro, Marmaray, tram, funicular)",M3,472277.0,350
+PARSELLER,"Rail (metro, Marmaray, tram, funicular)",M8,466146.0,351
+ISTINYE,Sea (ferries),ISTINYE-CBK,462822.0,352
+KUCUKYALI-2,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,453067.0,353
+LEVENT BATI KONKORS,"Rail (metro, Marmaray, tram, funicular)",M6,440655.0,354
+BEYKOZ,Sea (ferries),BEYKOZ-YKY,440460.0,355
+CENGELKOY,Sea (ferries),BOGAZ,436686.0,356
+HAVAALANI,"Rail (metro, Marmaray, tram, funicular)",M1,420401.0,357
+PIERLOTI,"Rail (metro, Marmaray, tram, funicular)",TF2,411375.0,358
+NURTEPE DOGU,"Rail (metro, Marmaray, tram, funicular)",M7,399893.0,359
+CAYIROVA,"Rail (metro, Marmaray, tram, funicular)",MARMARAY,396371.0,360
+AYVANSARAY,"Rail (metro, Marmaray, tram, funicular)",T5,395747.0,361
+M7 FULYA,"Rail (metro, Marmaray, tram, funicular)",M7,390642.0,362
+EYUP,Sea (ferries),HALIC,379442.0,363
+KASIMPASA,Sea (ferries),HALIC,371425.0,364
+EMIN ALI PASA,"Rail (metro, Marmaray, tram, funicular)",M8,359909.0,365
+CIRCIR BATI,"Rail (metro, Marmaray, tram, funicular)",M7,339774.0,366
+MACKA,"Rail (metro, Marmaray, tram, funicular)",TF1,326349.0,367
+BEYLIKDUZU SONDURAK 2,"Road (bus, metrobus)",34,326006.0,368
+SARIYER,Sea (ferries),BOGAZ,313545.0,369
+CUBUKLU ARABALI,Sea (ferries),CUBUKLU-IST,306353.0,370
+YENIKOY,Sea (ferries),YENIKOY-BKZ,304638.0,371
+KEMERBURGAZ,"Rail (metro, Marmaray, tram, funicular)",TCDD-GH,295956.0,372
+SIRKECIHAREM,Sea (ferries),İDO-İST2,294396.0,373
+HAREM,Sea (ferries),İDO-İST2,276909.0,374
+BURHANIYE,"Road (bus, metrobus)",34A,271857.0,375
+ALTUNIZADE 1,"Road (bus, metrobus)",34A,270716.0,376
+KUCUKSU,Sea (ferries),BOGAZ,226685.0,377
+BUYUKADA ELEKTRIKLI TURNIKE,"Road (bus, metrobus)",BA-2,211783.0,378
+EMINONU USKUDAR HATTI,Sea (ferries),EMINONU-USK,206532.0,379
+EMINONU KADIKOY HATTI,Sea (ferries),EMINONU-KDK,199509.0,380
+IHSANIYE,"Rail (metro, Marmaray, tram, funicular)",TCDD-GH,194341.0,381
+FENER,Sea (ferries),HALIC,182423.0,382
+ANADOLU HISARI,Sea (ferries),BOGAZ,181043.0,383
+BEBEK,Sea (ferries),BOGAZ,177947.0,384
+HASKOY,Sea (ferries),HALIC,164663.0,385
+ESKIHISAR,Sea (ferries),İDO-KRFZ,153705.0,386
+ANADOLU KAVAGI,Sea (ferries),BOGAZ,150733.0,387
+TOPCULAR,Sea (ferries),İDO-KRFZ,149076.0,388
+ARNAVUTKOY,Sea (ferries),BOGAZ,145717.0,389
+EMIRGAN,Sea (ferries),BOGAZ,127818.0,390
+TUHIM AVCILAR,Sea (ferries),AVC-KDK-AVC,99308.0,391
+HAVALIMANI   (KARGO TERMINALI),"Rail (metro, Marmaray, tram, funicular)",TCDD-GH,96821.0,392
+SUTLUCE,Sea (ferries),HALIC,85437.0,393
+EMINONU BOAZ,Sea (ferries),EMINONU-USK,78632.0,394
+KADIKOY (YENI),Sea (ferries),Y.KADIKOY-KBT,74430.0,395
+BALAT,Sea (ferries),HALIC,73453.0,396
+BEYLERBEYI,Sea (ferries),BOGAZ,63170.0,397
+KANLICA,Sea (ferries),BOGAZ,61143.0,398
+RUMELIKAVAGI,Sea (ferries),BOGAZ,53756.0,399
+EDIRNEKAPI 3,"Road (bus, metrobus)",34T,46274.0,400
+PASABAHCE,Sea (ferries),BOGAZ,46059.0,401
+TUHIM BAKIRKY,Sea (ferries),AVC-KDK-AVC,36964.0,402
+BAHCESEHIR,"Rail (metro, Marmaray, tram, funicular)",TCDD-HB,35531.0,403
+HASDAL,"Rail (metro, Marmaray, tram, funicular)",TCDD-GH,30909.0,404
+BUYUKDERE,Sea (ferries),BOGAZ,29980.0,405
+M9 IKITELLI,"Rail (metro, Marmaray, tram, funicular)",M9,27288.0,406
+KANDILLI,Sea (ferries),BOGAZ,25916.0,407
+AYVANSARAY,Sea (ferries),HALIC,24967.0,408
+KABATAS,Sea (ferries),DT-İST,21359.0,409
+KUZGUNCUK,Sea (ferries),BOGAZ,16940.0,410
+CUBUKLU,Sea (ferries),BOGAZ,11233.0,411
+USKUDAR ASY EYP UBH ORT,Sea (ferries),USKUDAR-EMN,8429.0,412
+EMINONU USKUDAR KADIKOY EMI-EMK EMI-EMB,Sea (ferries),EMINONU-USK,5873.0,413
+KADIKOY SH,Sea (ferries),AVC-KDK-AVC,2981.0,414
+YENIKAPI,Sea (ferries),YNK-ADA,2317.0,415
+BESIKTAS  BES-BSB,Sea (ferries),BOGAZ,1055.0,416
+YENI KABATAS KTS-ADA,Sea (ferries),KABATAS-ADA,753.0,417
+BOSTANCI SH,Sea (ferries),BOSTANCI-AVC,695.0,418
+BOSTANCI BTI-KRK,Sea (ferries),BOSTANCI-ADA,686.0,419
+KADIKOY ESKI 	KDE-BSB KDE-KTS EMK ORT,Sea (ferries),E.KADIKOY-ADA,533.0,420
+KARAKOY KAR-KHC KKY KAR-USR,Sea (ferries),EMINONU-USK,366.0,421
+ORTAKOY ORT-USE,Sea (ferries),BOGAZ,290.0,422
+OLIMPIYAT DOGU,"Rail (metro, Marmaray, tram, funicular)",M9,201.0,423
+BOGAZ KOPRUSU 2,"Rail (metro, Marmaray, tram, funicular)",34A,36.0,424
+KADIKOY,Sea (ferries),İDO-İST,35.0,425
+ISPARTAKULE,"Rail (metro, Marmaray, tram, funicular)",TCDD-HB,17.0,426
+KONUTBIRLIK,"Rail (metro, Marmaray, tram, funicular)",TCDD-HB,4.0,427

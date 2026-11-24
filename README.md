@@ -8,12 +8,12 @@ An end-to-end analytics and machine-learning project on **701.7 million rows** o
 
 | Question | Answer (from the data) | Where |
 |---|---|---|
-| How big is the network and has it recovered from the pandemic? | 2.45 billion boardings in 2023 (+4% vs 2022). Rail is at **123%** of its pre-pandemic level, buses still at **94%**: demand has shifted to rail. | [business insights](reports/business_insights.md) |
+| How big is the network and has it recovered from the pandemic? | 2.45 billion boardings (2.37 billion passengers) in 2023, passengers +4% vs 2022. Rail is at **123%** of its pre-pandemic level, buses still at **94%**: demand has shifted to rail. | [business insights](reports/business_insights.md) |
 | Where is capacity tightest? | 10 lines carry half of all boardings. Metrobüs 34 moves **~73,000 passengers in its 18:00 hour** on an average weekday; Marmaray ~60,000. | [business insights](reports/business_insights.md) |
 | Who pays what? | 45% discounted type 1, 37% full fare, 14% free. A step change in October 2023 (+6 points discounted) splits revenue history in two. | [business insights](reports/business_insights.md) |
 | How should service change on special days? | Bridge days cut the median line by **33%**, religious holidays by **26%**, while Bosphorus ferries rise by up to **+161%**. | [business insights](reports/business_insights.md) |
 | What drives demand, all else equal? | Bridge days −31%, elections −30%, school breaks −8 to −11%, every 10 mm of rain −6% (ferries −22%). | [factors](reports/factors.md) |
-| Can we forecast tomorrow, hour by hour? | Yes: ~9–10% hourly error, 32–38% better than "same hour last week"; on bayram days the error fell from 40% to 11–15% once 2.5 years of history were used. | [results](reports/results.md), [live demo](https://huggingface.co/spaces/yagmurtuncer/istanbul-transit-demand) |
+| Can we forecast tomorrow, hour by hour? | Yes: ~9–10% hourly error, 32–38% better than "same hour last week"; for Ramazan Bayramı 2024 the error fell from 40–44% to 11–15% once 2.5 years of history were used. | [results](reports/results.md), [live demo](https://huggingface.co/spaces/yagmurtuncer/istanbul-transit-demand) |
 
 ## SQL warehouse (DuckDB)
 

@@ -10,3 +10,6 @@ data/processed/*
 !data/**/.gitkeep
 *.parquet
 .DS_Store
+
+data/warehouse.duckdb
+data/warehouse.duckdb.wal

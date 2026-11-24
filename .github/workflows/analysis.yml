@@ -9,6 +9,9 @@ on:
       - "data/aggregated/**"
       - "scripts/run_analysis.py"
       - "scripts/run_factor_analysis.py"
+      - "data/detail/**"
+      - "warehouse/**"
+      - "scripts/business_report.py"
       - "src/transit/analysis/**"
       - "src/transit/models/**"
       - "src/transit/features/**"
@@ -30,6 +33,11 @@ jobs:
       - run: pip install -e ".[dev]"
       - run: python scripts/run_analysis.py
       - run: python scripts/run_factor_analysis.py
+      - name: SQL warehouse (DuckDB) + business report
+        run: |
+          pip install duckdb
+          python warehouse/build.py
+          python scripts/business_report.py
       - name: Dashboard screenshots
         run: |
           pip install -e ".[app]" playwright

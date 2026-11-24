@@ -1,10 +1,32 @@
-# Istanbul Public Transport Demand Forecasting
+# Istanbul Public Transport: Analytics & Demand Forecasting
 
 [![Live demo](https://img.shields.io/badge/%E2%96%B6%20Live%20demo-Hugging%20Face%20Space-ff9d00)](https://huggingface.co/spaces/yagmurtuncer/istanbul-transit-demand) [![Hugging Face dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-Hugging%20Face-yellow)](https://huggingface.co/datasets/yagmurtuncer/istanbul-public-transport-hourly-2024) [![Kaggle dataset](https://img.shields.io/badge/Dataset-Kaggle-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/nuryamurtuncer/istanbul-public-transport-hourly-passengers-2024)
 
-Hourly passenger demand forecasting for Istanbul's public transport network (road, rail and sea), built on open data from the **İBB Açık Veri Portalı** and enriched with weather and the Turkish holiday calendar.
+An end-to-end analytics and machine-learning project on **701.7 million rows** of Istanbul public transport data (January 2020 – October 2024, İBB Açık Veri Portalı): a **SQL star-schema warehouse** (DuckDB) with business marts, **statistical analysis** of what moves demand, and **day-ahead hourly forecasts** you can try in a live demo.
 
-> Status: ✅ Phase 1 (data pipeline) · 🚧 Phase 2–3 (statistics & models) running on real data — see **[reports/results.md](reports/results.md)**. Roadmap in [TODO.md](TODO.md).
+## Business questions answered
+
+| Question | Answer (from the data) | Where |
+|---|---|---|
+| How big is the network and has it recovered from the pandemic? | 2.45 billion boardings in 2023 (+4% vs 2022). Rail is at **123%** of its pre-pandemic level, buses still at **94%**: demand has shifted to rail. | [business insights](reports/business_insights.md) |
+| Where is capacity tightest? | 10 lines carry half of all boardings. Metrobüs 34 moves **~73,000 passengers in its 18:00 hour** on an average weekday; Marmaray ~60,000. | [business insights](reports/business_insights.md) |
+| Who pays what? | 45% discounted type 1, 37% full fare, 14% free. A step change in October 2023 (+6 points discounted) splits revenue history in two. | [business insights](reports/business_insights.md) |
+| How should service change on special days? | Bridge days cut the median line by **33%**, religious holidays by **26%**, while Bosphorus ferries rise by up to **+161%**. | [business insights](reports/business_insights.md) |
+| What drives demand, all else equal? | Bridge days −31%, elections −30%, school breaks −8 to −11%, every 10 mm of rain −6% (ferries −22%). | [factors](reports/factors.md) |
+| Can we forecast tomorrow, hour by hour? | Yes: ~9–10% hourly error, 32–38% better than "same hour last week"; on bayram days the error fell from 40% to 11–15% once 2.5 years of history were used. | [results](reports/results.md), [live demo](https://huggingface.co/spaces/yagmurtuncer/istanbul-transit-demand) |
+
+## SQL warehouse (DuckDB)
+
+`warehouse/sql/` builds a star schema in four layers: **staging** views over the extracts → **dimensions** (`dim_date` with holidays, school breaks, bridge days, Ramadan and elections; `dim_mode`, `dim_line`, `dim_station`, `dim_district`, `dim_fare`, `dim_month_quality`) → **facts** (hourly, line, station, district and fare grain) → **business marts** (monthly KPIs and recovery index, line and station rankings, peak-hour load, fare mix, transfer rate, special-day effect per line). Ten data-quality checks run on every build (for example: hourly, line, district and fare totals must match for every day; partially published months can never count as complete).
+
+```bash
+python warehouse/build.py          # ~1 minute: builds data/warehouse.duckdb, runs the checks, exports the marts
+python scripts/business_report.py  # writes reports/business_insights.md
+```
+
+Data caveats found while building it, and how they are handled: August–October 2024 are only partially published (flagged, excluded from KPIs); 55% of bus boardings are recorded under the district Bakırköy (district analysis uses rail and ferries only); İBB does not document the discounted fare codes (kept as published).
+
+> Status: ✅ data pipeline · ✅ SQL warehouse · ✅ statistics & forecasting · ✅ live demo. Roadmap in [TODO.md](TODO.md).
 
 ## Goals
 - Forecast next-day hourly demand per transport mode (later: per line / station).

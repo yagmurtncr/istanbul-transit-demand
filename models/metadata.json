@@ -1,0 +1,61 @@
+{
+  "trained_at": "2026-11-24T20:05:37+00:00",
+  "train_start": "2022-01-01",
+  "train_end": "2024-07-31",
+  "features": [
+    "lag_24",
+    "lag_48",
+    "lag_168",
+    "roll_mean_24",
+    "roll_mean_168",
+    "temperature_2m",
+    "precipitation",
+    "wind_speed_10m",
+    "is_holiday",
+    "is_religious_holiday",
+    "is_national_holiday",
+    "is_eve",
+    "is_half_day",
+    "is_ramadan",
+    "is_bridge",
+    "is_election",
+    "school_closed",
+    "is_weekend",
+    "hour_sin",
+    "hour_cos",
+    "hour",
+    "dow",
+    "month"
+  ],
+  "params": {
+    "loss": "poisson",
+    "max_iter": 400,
+    "learning_rate": 0.05,
+    "max_leaf_nodes": 31,
+    "random_state": 0
+  },
+  "target": "passengers per hour",
+  "models": {
+    "rail": {
+      "file": "transit_gbm_rail.skops",
+      "rows": 22464,
+      "wape": 5.58,
+      "mae": 6093.66,
+      "naive_wape": 13.8
+    },
+    "road": {
+      "file": "transit_gbm_road.skops",
+      "rows": 22464,
+      "wape": 5.15,
+      "mae": 6726.3,
+      "naive_wape": 13.09
+    },
+    "sea": {
+      "file": "transit_gbm_sea.skops",
+      "rows": 22464,
+      "wape": 8.66,
+      "mae": 726.91,
+      "naive_wape": 19.49
+    }
+  }
+}

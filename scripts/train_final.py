@@ -130,8 +130,6 @@ model = load(path, trusted=get_untrusted_types(file=path))   # review the listed
 
 Source data: İstanbul Büyükşehir Belediyesi Açık Veri Portalı, *Saatlik Toplu Ulaşım Veri Seti* (İBB Open Data
 License); weather: Open-Meteo (CC BY 4.0). Model weights: MIT.
-
-*Trained {meta['trained_at']}.*
 """
 
 

@@ -36,7 +36,7 @@ jobs:
       - run: python scripts/run_factor_analysis.py
       - name: SQL warehouse (DuckDB) + business report
         run: |
-          pip install duckdb
+          pip install duckdb openpyxl
           python warehouse/build.py
           python scripts/business_report.py
           python tableau/export_tableau.py

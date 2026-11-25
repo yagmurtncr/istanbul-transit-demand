@@ -41,7 +41,7 @@ By payment type: Pay per ride 41%, Subscription 36%, Free 13%, Transfer 9%, Othe
 
 - The fare codes are reported as published: İBB does not say which concession each discounted code covers, and code 1 alone is over 40% of boardings, so it cannot be students only.
 - The biggest month-to-month shift in the mix: discounted type 1 went from 45% to 51% of boardings in October 2023 (average 48% afterwards). A step like this points to a change in fare rules or card eligibility; revenue models should not mix months from before and after it.
-- **Transfers:** Rail 12%, Sea 18%, Road 6% of boardings are discounted transfers; any change to the transfer rule hits these riders first.
+- **Transfers:** Sea 18%, Road 6%, Rail 12% of boardings are discounted transfers; any change to the transfer rule hits these riders first.
 
 ![Fare mix](figures/business/fare_mix.png)
 

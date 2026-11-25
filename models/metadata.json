@@ -1,5 +1,5 @@
 {
-  "trained_at": "2026-11-25T08:28:02+00:00",
+  "trained_at": "2026-11-25T17:32:01+00:00",
   "train_start": "2022-01-01",
   "train_end": "2024-07-31",
   "features": [
@@ -34,6 +34,17 @@
     "max_leaf_nodes": 31,
     "random_state": 0
   },
+  "mode_params": {
+    "road": {
+      "loss": "poisson",
+      "max_iter": 800,
+      "learning_rate": 0.03,
+      "max_leaf_nodes": 63,
+      "random_state": 0,
+      "min_samples_leaf": 40,
+      "l2_regularization": 0.5
+    }
+  },
   "target": "passengers per hour",
   "models": {
     "rail": {
@@ -46,8 +57,8 @@
     "road": {
       "file": "transit_gbm_road.skops",
       "rows": 22464,
-      "wape": 5.15,
-      "mae": 6726.3,
+      "wape": 4.72,
+      "mae": 6162.36,
       "naive_wape": 13.09
     },
     "sea": {

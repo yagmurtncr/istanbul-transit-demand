@@ -32,11 +32,18 @@ WAPE = sum of absolute errors / sum of actual passengers (hourly).
 | Mode | File | WAPE | Same hour last week | Improvement |
 |---|---|---|---|---|
 | Rail (metro, Marmaray, tram, funicular) | `transit_gbm_rail.skops` | 5.6% | 13.8% | 60% |
-| Road (bus, metrobus) | `transit_gbm_road.skops` | 5.2% | 13.1% | 61% |
+| Road (bus, metrobus) | `transit_gbm_road.skops` | 4.7% | 13.1% | 64% |
 | Sea (ferries) | `transit_gbm_sea.skops` | 8.7% | 19.5% | 56% |
 
-On public holidays the error is higher than on ordinary days (around 9–15% for the 2024 bayrams); bridge days and
-election days are rare in the training data.
+The validation weeks (June–July 2024) are mostly ordinary days. On April–May 2024, which contain Ramazan Bayramı,
+23 Nisan, 1 and 19 Mayıs and the local elections, the same models score about 9% (rail), 7% (road) and 14% (ferries):
+special days remain the hardest part. Settings were chosen on April–May and confirmed on the held-out June–July weeks.
+
+### Özet (Türkçe)
+
+Model, ertesi günün her saati için yolcu sayısını tahmin ediyor. Saatlik hata raylı sistemde yaklaşık %5,6,
+otobüste %4,7, vapurda %8,7. "Geçen hafta aynı saat" yöntemi ise %13–19 hata yapıyor; model hatayı yaklaşık
+%60 azaltıyor. Bayram, köprü günü ve seçim gibi özel günlerde hata daha yüksek.
 
 ## Inputs
 

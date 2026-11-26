@@ -1,6 +1,6 @@
 # Istanbul Public Transport: Analytics & Demand Forecasting
 
-[![Live demo](https://img.shields.io/badge/%E2%96%B6%20Live%20demo-Hugging%20Face%20Space-ff9d00)](https://huggingface.co/spaces/yagmurtuncer/istanbul-transit-demand) [![Hugging Face model](https://img.shields.io/badge/%F0%9F%A4%97%20Model-Hugging%20Face-yellow)](https://huggingface.co/yagmurtuncer/istanbul-transit-demand-gbm) [![Hugging Face dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-Hugging%20Face-yellow)](https://huggingface.co/datasets/yagmurtuncer/istanbul-public-transport-hourly-2024) [![Kaggle dataset](https://img.shields.io/badge/Dataset-Kaggle-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/nuryamurtuncer/istanbul-public-transport-hourly-passengers-2024)
+[![Live demo](https://img.shields.io/badge/%E2%96%B6%20Live%20demo-Hugging%20Face%20Space-ff9d00)](https://huggingface.co/spaces/yagmurtuncer/istanbul-transit-demand) [![Hugging Face model](https://img.shields.io/badge/%F0%9F%A4%97%20Model-Hugging%20Face-yellow)](https://huggingface.co/yagmurtuncer/istanbul-transit-demand-gbm) [![Hugging Face dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-Hugging%20Face-yellow)](https://huggingface.co/datasets/yagmurtuncer/istanbul-public-transport-hourly-2024) [![Kaggle dataset](https://img.shields.io/badge/Dataset-Kaggle-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/nuryamurtuncer/istanbul-public-transport-hourly-passengers-2024) [![Tableau Public](https://img.shields.io/badge/Dashboard-Tableau%20Public-E97627?logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/ya.mur.tuncer/viz/IstanbulPublicTransportAnalytics2020-2024/Recoveryindex)
 
 An end-to-end analytics and machine-learning project on **701.7 million rows** of Istanbul public transport data (January 2020 – October 2024, İBB Açık Veri Portalı): a **SQL star-schema warehouse** (DuckDB) with business marts, **statistical analysis** of what moves demand, and **day-ahead hourly forecasts** you can try in a live demo.
 
@@ -23,6 +23,8 @@ An end-to-end analytics and machine-learning project on **701.7 million rows** o
 python warehouse/build.py          # ~1 minute: builds data/warehouse.duckdb, runs the checks, exports the marts
 python scripts/business_report.py  # writes reports/business_insights.md
 ```
+
+**Tableau Public dashboard:** the marts are exported to [`tableau/istanbul_transit_tableau.xlsx`](tableau/) on every build and visualised in an [interactive Tableau dashboard](https://public.tableau.com/app/profile/ya.mur.tuncer/viz/IstanbulPublicTransportAnalytics2020-2024/Recoveryindex) (recovery index, peak hours by line, fare mix, holiday effect per line).
 
 Data caveats found while building it, and how they are handled: August–October 2024 are only partially published (flagged, excluded from KPIs); 55% of bus boardings are recorded under the district Bakırköy (district analysis uses rail and ferries only); İBB does not document the discounted fare codes (kept as published).
 

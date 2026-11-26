@@ -103,7 +103,7 @@ tags:
   - istanbul
   - public-transport
 datasets:
-  - yagmurtuncer/istanbul-public-transport-hourly-2024
+  - yagmurtuncer/istanbul-public-transport-ridership-2020-2024
 pipeline_tag: tabular-regression
 ---
 

@@ -1,6 +1,6 @@
 # Istanbul Public Transport: Analytics & Demand Forecasting
 
-[![Live demo](https://img.shields.io/badge/%E2%96%B6%20Live%20demo-Hugging%20Face%20Space-ff9d00)](https://huggingface.co/spaces/yagmurtuncer/istanbul-transit-demand) [![Hugging Face model](https://img.shields.io/badge/%F0%9F%A4%97%20Model-Hugging%20Face-yellow)](https://huggingface.co/yagmurtuncer/istanbul-transit-demand-gbm) [![Hugging Face dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-Hugging%20Face-yellow)](https://huggingface.co/datasets/yagmurtuncer/istanbul-public-transport-hourly-2024) [![Kaggle dataset](https://img.shields.io/badge/Dataset-Kaggle-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/nuryamurtuncer/istanbul-public-transport-hourly-passengers-2024) [![Tableau Public](https://img.shields.io/badge/Dashboard-Tableau%20Public-E97627?logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/ya.mur.tuncer/viz/IstanbulPublicTransportAnalytics2020-2024/Recoveryindex)
+[![Live demo](https://img.shields.io/badge/%E2%96%B6%20Live%20demo-Hugging%20Face%20Space-ff9d00)](https://huggingface.co/spaces/yagmurtuncer/istanbul-transit-demand) [![Hugging Face model](https://img.shields.io/badge/%F0%9F%A4%97%20Model-Hugging%20Face-yellow)](https://huggingface.co/yagmurtuncer/istanbul-transit-demand-gbm) [![Hugging Face dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-Hugging%20Face-yellow)](https://huggingface.co/datasets/yagmurtuncer/istanbul-public-transport-ridership-2020-2024) [![Kaggle dataset](https://img.shields.io/badge/Dataset-Kaggle-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/nuryamurtuncer/istanbul-public-transport-hourly-passengers-2024) [![Tableau Public](https://img.shields.io/badge/Dashboard-Tableau%20Public-E97627?logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/ya.mur.tuncer/viz/IstanbulPublicTransportAnalytics2020-2024/Recoveryindex)
 
 An end-to-end analytics and machine-learning project on **701.7 million rows** of Istanbul public transport data (January 2020 – October 2024, İBB Açık Veri Portalı): a **SQL star-schema warehouse** (DuckDB) with business marts, **statistical analysis** of what moves demand, and **day-ahead hourly forecasts** you can try in a live demo.
 
@@ -37,7 +37,7 @@ Data caveats found while building it, and how they are handled: August–October
 
 ## Data
 
-**Published datasets:** the aggregated data used in this project is available on [Hugging Face](https://huggingface.co/datasets/yagmurtuncer/istanbul-public-transport-hourly-2024) and [Kaggle](https://www.kaggle.com/datasets/nuryamurtuncer/istanbul-public-transport-hourly-passengers-2024) (CC BY 4.0, source: İBB Açık Veri Portalı).
+**Published datasets:** the aggregated data used in this project is available on [Hugging Face](https://huggingface.co/datasets/yagmurtuncer/istanbul-public-transport-ridership-2020-2024) and [Kaggle](https://www.kaggle.com/datasets/nuryamurtuncer/istanbul-public-transport-hourly-passengers-2024) (CC BY 4.0, source: İBB Açık Veri Portalı).
 | Source | Content | Access |
 |---|---|---|
 | [İBB Açık Veri — Saatlik Toplu Ulaşım](https://data.ibb.gov.tr/dataset/hourly-public-transport-data-set) | Hourly passenger counts by mode, line and transfer type (monthly CSVs) | CKAN API, İBB open data licence |

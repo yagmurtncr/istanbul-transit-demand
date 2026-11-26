@@ -48,7 +48,7 @@ def forecast(feats: pd.DataFrame, mode: str, day: pd.Timestamp) -> pd.DataFrame:
 
 feats = load()
 st.title("🚇 Istanbul public transport demand")
-st.caption("İBB open data, January–July 2024 · gradient boosting (Poisson loss) with weather, holidays and school breaks")
+st.caption("İBB open data, January 2022 – July 2024 · gradient boosting (Poisson loss) with weather, holidays and school breaks")
 
 c1, c2 = st.columns([1, 2])
 mode = c1.selectbox("Mode", list(MODES), format_func=MODES.get)

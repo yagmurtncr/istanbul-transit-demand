@@ -126,7 +126,7 @@ def main() -> None:
     # ---------- report ----------
     tot = daily.groupby("transport_type")["passengers"].sum()
     lines = [
-        "# Results (İBB data, January–July 2024)", "",
+        f"# Results (İBB data, {daily['date'].min():%B %Y} – {daily['date'].max():%B %Y})", "",
         f"Data: {len(hourly):,} hourly rows, {daily['date'].nunique()} days, "
         f"{tot.sum() / 1e9:.2f} billion recorded passengers "
         f"(rail {tot.get('rail', 0) / 1e6:,.0f} M, road {tot.get('road', 0) / 1e6:,.0f} M, sea {tot.get('sea', 0) / 1e6:,.0f} M).",

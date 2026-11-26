@@ -44,15 +44,15 @@ Data caveats found while building it, and how they are handled: August–October
 | [Open-Meteo Archive API](https://open-meteo.com/) | Hourly temperature, precipitation, snowfall, wind | Free, no key |
 | [`holidays`](https://pypi.org/project/holidays/) | Turkish public and religious holidays (incl. eves) | Python package |
 
-Raw data is **not** committed (each month is ~1.6 GB). Instead, [`data/aggregated/`](data/aggregated/) contains January–July 2024 summed to hourly totals per mode (~120 million raw rows → 15k rows), so the analysis is reproducible in seconds. The full pipeline can still download raw months into `data/raw/`.
+Raw data is **not** committed (each month is ~1.6 GB). Instead, [`data/aggregated/`](data/aggregated/) holds January 2022 – July 2024 summed to hourly totals per mode, and [`data/detail/`](data/detail/) holds daily line, station, district and fare tables for January 2020 – October 2024 (701.7 million raw rows in total), so the analysis is reproducible in seconds. The full pipeline can still download raw months into `data/raw/`.
 
 ## Approach
 1. **Pipeline** – download, clean, aggregate to an hourly panel, fill missing hours explicitly.
 2. **Features** – calendar (cyclic hour encoding, weekday, holidays, eves), weather, lagged demand (24h / 48h / 168h) and rolling means. All lag features are built so that a day-ahead forecast never sees the future; a unit test enforces this.
 3. **Validation** – expanding-window walk-forward splits; metrics: MAE, sMAPE, WAPE.
-4. **Models** – seasonal naive → linear models → gradient boosting (XGBoost) with SHAP explanations.
-5. **Statistics** – effect of rain and holidays with bootstrap confidence intervals and hypothesis tests.
-6. **MLOps** – MLflow tracking, Docker, GitHub Actions CI, scheduled daily retraining on AWS, Streamlit dashboard.
+4. **Models** – seasonal naive → ridge → gradient boosting (scikit-learn with a Poisson loss, and XGBoost), explained with SHAP.
+5. **Statistics** – bootstrap confidence intervals and Mann-Whitney tests, plus a multivariate regression that separates holidays, bridge days, school breaks, Ramadan, elections and weather.
+6. **MLOps** – MLflow tracking, a Docker image on GitHub Container Registry, GitHub Actions for tests, reports, the SQL warehouse and retraining, and a Streamlit dashboard.
 
 ## Quick start
 ```bash
@@ -99,12 +99,13 @@ notebooks/   EDA and analysis
 ```
 
 ## Results
-First findings on January–July 2024 (1.43 billion passengers):
+Findings on January 2022 – July 2024 (943 days, 6.07 billion passengers), working days:
 
-- **Public holidays** cut weekday demand by about **27% on rail** and **35% on buses**, while **ferry** use rises by about **77%**.
-- **School breaks** lower weekday demand by about **17% on rail** and **21% on buses**; ferries are unaffected.
-- **Rain** (≥ 2 mm during the day) reduces demand by about **4% on rail and buses** and **18% on ferries**. This only became visible after separating school breaks from term time: the two effects were masking each other.
-- **Gradient boosting with a Poisson loss** (suited to counts) reaches a day-ahead WAPE of about **9.4% (rail)** and **8.1% (road)**, **32–38% lower error** than a same-hour-last-week baseline.
+- **Public holidays** cut weekday demand by about **21% on rail** and **29% on buses**, while **ferry** use rises by about **90%**.
+- **School breaks** lower weekday demand by about **15% on rail** and **18% on buses**; ferries rise slightly (+5%).
+- **Rain** (≥ 2 mm during the day) reduces demand by about **5% on rail**, **6% on buses** and **22% on ferries**. This only became visible after separating school breaks from term time: the two effects were masking each other.
+- **Gradient boosting with a Poisson loss** reaches a day-ahead hourly WAPE of **5.6% (rail)**, **4.7% (road, tuned)** and **8.7% (ferries)**, about **60% lower error** than a same-hour-last-week baseline; using the weather forecast issued the day before changes it by less than half a point.
+- A multivariate regression that holds weekday, month, year and weather fixed separates the calendar further (bridge days −31%, elections −30%, single-day national holidays barely affect rail): [reports/factors.md](reports/factors.md).
 
 All effects above are statistically significant (bootstrap 95% CI and Mann-Whitney U, p < 0.01). Full tables and figures: [reports/results.md](reports/results.md) — regenerated automatically by the `Analysis` GitHub Actions workflow whenever data or model code changes.
 

@@ -41,7 +41,7 @@ By payment type: Pay per ride 41%, Subscription 36%, Free 13%, Transfer 9%, Othe
 
 - Card groups follow İBB's own card-type dataset: discounted code 1 is the student card, code 2 the teacher and 60+ cards.
 - **The student share follows the school calendar:** 42% of boardings in summer vs 51% in October–December (2023), and it rises every year (2021: 41%, 2022: 48%, 2023: 51% in the autumn months). Fare changes and revenue forecasts should be evaluated on this seasonal mix, not on annual averages.
-- **Transfers:** Rail 12%, Road 6%, Sea 18% of boardings are discounted transfers; any change to the transfer rule hits these riders first.
+- **Transfers:** Road 6%, Sea 18%, Rail 12% of boardings are discounted transfers; any change to the transfer rule hits these riders first.
 
 ![Fare mix](figures/business/fare_mix.png)
 

@@ -30,14 +30,14 @@ FROM stg_station_daily WHERE station <> '' GROUP BY station, mode_id;
 CREATE OR REPLACE TABLE dim_district AS
 SELECT DISTINCT district FROM stg_district_daily;
 
--- product_kind codes as published by İBB, grouped into card groups. İBB does not document which concession
--- each discounted code covers, so they are kept as published (INDIRIMLI1 alone is 40-50% of boardings,
--- far more than students, so it must include other concession holders).
+-- product_kind codes as published by İBB, mapped with İBB's own card-type dataset
+-- (istanbulkart-yillara-ve-kart-tiplerine-gore-kullanim-verisi): "Indirimli Kart" = student cards,
+-- "Indirimli Kart 2" = teacher and 60+ cards. Its 2023 shares (44.3%, 3.2%, full 39.1%, free 13.4%) match ours.
 CREATE OR REPLACE TABLE dim_fare AS
 SELECT DISTINCT product_kind, transaction_type, transfer_type,
        CASE WHEN product_kind = 'TAM' THEN 'Full fare'
-            WHEN product_kind LIKE 'INDIRIMLI1%' THEN 'Discounted type 1'
-            WHEN product_kind LIKE 'INDIRIMLI2%' THEN 'Discounted type 2'
+            WHEN product_kind LIKE 'INDIRIMLI1%' THEN 'Student'
+            WHEN product_kind LIKE 'INDIRIMLI2%' THEN 'Teacher / 60+'
             WHEN product_kind LIKE 'UCRETSIZ%' THEN 'Free'
             WHEN product_kind = 'PERSONEL' THEN 'Staff'
             ELSE 'Other' END AS card_group,

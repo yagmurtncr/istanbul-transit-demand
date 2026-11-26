@@ -123,17 +123,18 @@ def main() -> None:
           "2023 boardings by card group: " + ", ".join(f"{k} {v:.0f}%" for k, v in cg23.sort_values(ascending=False).items())
           + ".", "", "By payment type: " + ", ".join(f"{k} {v:.0f}%" for k, v in pt23.sort_values(ascending=False).items())
           + ".", ""]
-    d1 = cg.get("Discounted type 1")
-    L += ["- The fare codes are reported as published: İBB does not say which concession each discounted code "
-          "covers, and code 1 alone is over 40% of boardings, so it cannot be students only."]
-    covid = pd.to_datetime(q.loc[q["is_covid_period"], "month"])
-    d1 = d1[~d1.index.isin(covid)] if d1 is not None else None
-    if d1 is not None and len(d1) > 24:
-        jump = d1.diff().idxmax()
-        after = d1[d1.index >= jump].mean()
-        L += [f"- The biggest month-to-month shift in the mix: discounted type 1 went from {d1.shift(1)[jump]:.0f}% to "
-              f"{d1[jump]:.0f}% of boardings in {jump:%B %Y} (average {after:.0f}% afterwards). A step like this points to a "
-              "change in fare rules or card eligibility; revenue models should not mix months from before and after it."]
+    st = cg.get("Student")
+    L += ["- Card groups follow İBB's own card-type dataset: discounted code 1 is the student card, code 2 the "
+          "teacher and 60+ cards."]
+    if st is not None and len(st) > 24:
+        s_ = st[~st.index.isin(pd.to_datetime(q.loc[q["is_covid_period"], "month"]))]
+        summer = s_[s_.index.month.isin([6, 7, 8])].groupby(s_[s_.index.month.isin([6, 7, 8])].index.year).mean()
+        autumn = s_[s_.index.month.isin([10, 11, 12])].groupby(s_[s_.index.month.isin([10, 11, 12])].index.year).mean()
+        yr = autumn.index.max()
+        L += [f"- **The student share follows the school calendar:** {summer.get(yr, summer.iloc[-1]):.0f}% of boardings in "
+              f"summer vs {autumn[yr]:.0f}% in October–December ({yr}), and it rises every year "
+              f"({', '.join(f'{y}: {v:.0f}%' for y, v in autumn.items())} in the autumn months). Fare changes and "
+              "revenue forecasts should be evaluated on this seasonal mix, not on annual averages."]
     tr = m("mart_transfer_rate")
     tr23 = tr[tr["year"] == 2023].set_index("mode_label")["transfer_pct"]
     if len(tr23):

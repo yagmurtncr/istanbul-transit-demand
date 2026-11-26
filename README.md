@@ -10,7 +10,7 @@ An end-to-end analytics and machine-learning project on **701.7 million rows** o
 |---|---|---|
 | How big is the network and has it recovered from the pandemic? | 2.45 billion boardings (2.37 billion passengers) in 2023, passengers +4% vs 2022. Rail is at **123%** of its pre-pandemic level, buses still at **94%**: demand has shifted to rail. | [business insights](reports/business_insights.md) |
 | Where is capacity tightest? | 10 lines carry half of all boardings. Metrobüs 34 moves **~73,000 passengers in its 18:00 hour** on an average weekday; Marmaray ~60,000. | [business insights](reports/business_insights.md) |
-| Who pays what? | 45% discounted type 1, 37% full fare, 14% free. A step change in October 2023 (+6 points discounted) splits revenue history in two. | [business insights](reports/business_insights.md) |
+| Who pays what? | 45% student cards, 37% full fare, 14% free, 3% teacher / 60+ (2023). The student share follows the school calendar: about 42% in summer, 51% in October–December, and it rises every year. | [business insights](reports/business_insights.md) |
 | How should service change on special days? | Bridge days cut the median line by **33%**, religious holidays by **26%**, while Bosphorus ferries rise by up to **+161%**. | [business insights](reports/business_insights.md) |
 | What drives demand, all else equal? | Bridge days −31%, elections −30%, school breaks −8 to −11%, every 10 mm of rain −6% (ferries −22%). | [factors](reports/factors.md) |
 | Can we forecast tomorrow, hour by hour? | Yes: the published models reach 5.6% (rail), 5.2% (road) and 8.7% (ferries) hourly error, about 60% better than "same hour last week"; for Ramazan Bayramı 2024 the error fell from 40–44% to 11–15% once 2.5 years of history were used. | [model](https://huggingface.co/yagmurtuncer/istanbul-transit-demand-gbm), [results](reports/results.md), [live demo](https://huggingface.co/spaces/yagmurtuncer/istanbul-transit-demand) |
@@ -26,7 +26,7 @@ python scripts/business_report.py  # writes reports/business_insights.md
 
 **Tableau Public dashboard:** the marts are exported to [`tableau/istanbul_transit_tableau.xlsx`](tableau/) on every build and visualised in an [interactive Tableau dashboard](https://public.tableau.com/app/profile/ya.mur.tuncer/viz/IstanbulPublicTransportAnalytics2020-2024/Recoveryindex) (recovery index, peak hours by line, fare mix, holiday effect per line).
 
-Data caveats found while building it, and how they are handled: August–October 2024 are only partially published (flagged, excluded from KPIs); 55% of bus boardings are recorded under the district Bakırköy (district analysis uses rail and ferries only); İBB does not document the discounted fare codes (kept as published).
+Data caveats found while building it, and how they are handled: August–October 2024 are only partially published (flagged, excluded from KPIs); 55% of bus boardings are recorded under the district Bakırköy (district analysis uses rail and ferries only); the fare codes are not documented in the ridership dataset, so they were mapped with İBB’s own card-type dataset (discounted code 1 = student, code 2 = teacher and 60+; its 2023 shares match ours within one point).
 
 > Status: ✅ data pipeline · ✅ SQL warehouse · ✅ statistics & forecasting · ✅ live demo. Roadmap in [TODO.md](TODO.md).
 

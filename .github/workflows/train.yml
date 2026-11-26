@@ -7,6 +7,7 @@ on:
   push:
     paths:
       - "scripts/train_final.py"
+      - "scripts/explain_and_stress_test.py"
       - "data/aggregated/**"
       - "src/transit/features/**"
       - "src/transit/models/**"
@@ -22,13 +23,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install -e . skops
+      - run: pip install -e . skops mlflow
       - run: python scripts/train_final.py
+      - run: python scripts/explain_and_stress_test.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mlruns
+          path: mlruns
       - name: Commit models
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add models
+          git add models reports
           git diff --cached --quiet && exit 0
           git commit -m "Update trained models [skip ci]"
           git pull --rebase

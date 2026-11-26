@@ -61,7 +61,30 @@ def main() -> None:
         meta["models"][mode] = {"file": path.name, "rows": len(df), **{k: round(v, 2) for k, v in scores.items()}}
         print(mode, meta["models"][mode])
     (OUT / "metadata.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
+    log_to_mlflow(meta)
     (OUT / "README.md").write_text(model_card(meta), encoding="utf-8")
+
+
+def log_to_mlflow(meta: dict) -> None:
+    """Record every training run in MLflow (local ./mlruns store; CI uploads it as a build artifact)."""
+    try:
+        import mlflow
+    except ImportError:
+        print("mlflow not installed: skipping experiment tracking")
+        return
+    store = ROOT / "mlruns"
+    store.mkdir(exist_ok=True)
+    mlflow.set_tracking_uri(f"sqlite:///{store / 'mlflow.db'}")
+    name = "istanbul-transit-demand"
+    if mlflow.get_experiment_by_name(name) is None:
+        mlflow.create_experiment(name, artifact_location=(store / "artifacts").as_uri())
+    mlflow.set_experiment(name)
+    for mode, info in meta["models"].items():
+        with mlflow.start_run(run_name=f"gbm-{mode}"):
+            mlflow.set_tags({"mode": mode, "train_start": meta["train_start"], "train_end": meta["train_end"]})
+            mlflow.log_params({k: v for k, v in MODE_PARAMS.get(mode, PARAMS).items()})
+            mlflow.log_metrics({"wape": info["wape"], "mae": info["mae"], "naive_wape": info["naive_wape"]})
+            mlflow.log_artifact(str(OUT / info["file"]))
 
 
 def model_card(meta: dict) -> str:

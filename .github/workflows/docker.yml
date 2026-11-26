@@ -1,0 +1,41 @@
+name: Docker image
+
+# Builds the dashboard image and publishes it to GitHub Container Registry:
+#   docker run -p 8501:8501 ghcr.io/yagmurtncr/istanbul-transit-demand:latest
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "Dockerfile"
+      - "app/**"
+      - "src/**"
+      - "data/aggregated/**"
+      - "pyproject.toml"
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}:latest
+            ghcr.io/${{ github.repository }}:${{ github.sha }}
+      - name: Smoke test
+        run: |
+          docker run -d -p 8501:8501 --name app ghcr.io/${{ github.repository }}:latest
+          for i in $(seq 1 30); do curl -sf http://localhost:8501/_stcore/health && exit 0; sleep 2; done
+          docker logs app; exit 1

@@ -1,4 +1,12 @@
 month,days_present,days_in_month,is_partial,is_covid_period,is_complete
+2020-03-01,31,31,False,True,True
+2020-12-01,31,31,False,True,True
+2021-03-01,31,31,False,True,True
+2022-04-01,30,30,False,False,True
+2022-07-01,31,31,False,False,True
+2022-11-01,30,30,False,False,True
+2023-03-01,31,31,False,False,True
+2023-09-01,30,30,False,False,True
 2020-07-01,31,31,False,True,True
 2020-11-01,30,30,False,True,True
 2021-04-01,30,30,False,True,True
@@ -49,11 +57,3 @@ month,days_present,days_in_month,is_partial,is_covid_period,is_complete
 2024-05-01,31,31,False,False,True
 2024-07-01,31,31,False,False,True
 2024-08-01,31,31,True,False,False
-2020-03-01,31,31,False,True,True
-2020-12-01,31,31,False,True,True
-2021-03-01,31,31,False,True,True
-2022-04-01,30,30,False,False,True
-2022-07-01,31,31,False,False,True
-2022-11-01,30,30,False,False,True
-2023-03-01,31,31,False,False,True
-2023-09-01,30,30,False,False,True

@@ -35,13 +35,13 @@ What the İBB ridership data means for **capacity**, **pricing** and **operation
 
 ## 3. Pricing: who pays what
 
-2023 boardings by card group: Discounted type 1 45%, Full fare 37%, Free 14%, Discounted type 2 3%, Other 0%, Staff 0%.
+2023 boardings by card group: Student 45%, Full fare 37%, Free 14%, Teacher / 60+ 3%, Other 0%, Staff 0%.
 
 By payment type: Pay per ride 41%, Subscription 36%, Free 13%, Transfer 9%, Other 0%.
 
-- The fare codes are reported as published: İBB does not say which concession each discounted code covers, and code 1 alone is over 40% of boardings, so it cannot be students only.
-- The biggest month-to-month shift in the mix: discounted type 1 went from 45% to 51% of boardings in October 2023 (average 48% afterwards). A step like this points to a change in fare rules or card eligibility; revenue models should not mix months from before and after it.
-- **Transfers:** Sea 18%, Road 6%, Rail 12% of boardings are discounted transfers; any change to the transfer rule hits these riders first.
+- Card groups follow İBB's own card-type dataset: discounted code 1 is the student card, code 2 the teacher and 60+ cards.
+- **The student share follows the school calendar:** 42% of boardings in summer vs 51% in October–December (2023), and it rises every year (2021: 41%, 2022: 48%, 2023: 51% in the autumn months). Fare changes and revenue forecasts should be evaluated on this seasonal mix, not on annual averages.
+- **Transfers:** Rail 12%, Road 6%, Sea 18% of boardings are discounted transfers; any change to the transfer rule hits these riders first.
 
 ![Fare mix](figures/business/fare_mix.png)
 

@@ -1,4 +1,4 @@
-# Results (İBB data, January–July 2024)
+# Results (İBB data, January 2022 – July 2024)
 
 Data: 67,896 hourly rows, 943 days, 6.07 billion recorded passengers (rail 2,555 M, road 3,347 M, sea 170 M).
 Weather: Open-Meteo hourly archive for central Istanbul. Holidays: `holidays` package (incl. eves). School breaks: MEB calendar (`SCHOOL_BREAKS`).

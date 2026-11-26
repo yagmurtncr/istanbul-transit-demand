@@ -63,6 +63,13 @@ python scripts/run_analysis.py          # EDA, statistical tests, model comparis
 python scripts/run_phase1.py --months 6  # optional: re-download raw months from İBB
 ```
 
+## MLOps and explainability
+
+- **Experiment tracking:** every training run is logged to MLflow (parameters, metrics and model files); the Train model workflow uploads the MLflow store as a build artifact.
+- **Container:** `docker run -p 8501:8501 ghcr.io/yagmurtncr/istanbul-transit-demand:latest` starts the dashboard at http://localhost:8501. The image is built, smoke-tested and published to GitHub Container Registry by the Docker image workflow.
+- **Automation:** GitHub Actions runs the tests, rebuilds the warehouse and every report, retrains the models and refreshes the dashboard screenshots whenever data or code change.
+- **Explainability and a real day-ahead test:** [reports/explainability.md](reports/explainability.md) has SHAP plots for each model, and the same models tested with the weather forecast issued the day before instead of the observed weather: the error rises by less than half a point (rail 5.65% to 5.70%, road 4.76% to 4.82%, ferries 9.03% to 9.46%).
+
 ## Interactive dashboard
 
 **▶️ Try it live (no install, runs in your browser): [huggingface.co/spaces/yagmurtuncer/istanbul-transit-demand](https://huggingface.co/spaces/yagmurtuncer/istanbul-transit-demand)**

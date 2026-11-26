@@ -12,7 +12,7 @@ An end-to-end analytics and machine-learning project on **701.7 million rows** o
 | Where is capacity tightest? | 10 lines carry half of all boardings. Metrobüs 34 moves **~73,000 passengers in its 18:00 hour** on an average weekday; Marmaray ~60,000. | [business insights](reports/business_insights.md) |
 | Who pays what? | 45% student cards, 37% full fare, 14% free, 3% teacher / 60+ (2023). The student share follows the school calendar: about 42% in summer, 51% in October–December, and it rises every year. | [business insights](reports/business_insights.md) |
 | How should service change on special days? | Bridge days cut the median line by **33%**, religious holidays by **26%**, while Bosphorus ferries rise by up to **+161%**. | [business insights](reports/business_insights.md) |
-| What drives demand, all else equal? | Bridge days −31%, elections −30%, school breaks −8 to −11%, every 10 mm of rain −6% (ferries −22%). | [factors](reports/factors.md) |
+| What drives demand, all else equal? | Bridge days −31%, elections −30%, school breaks −8 to −11%, every 10 mm of rain −6% (ferries −22%). Single-day national holidays such as 23 Nisan and 19 Mayıs barely move rail (−2%, not significant) but lift ferries by 39%. | [factors](reports/factors.md) |
 | Can we forecast tomorrow, hour by hour? | Yes: the published models reach 5.6% (rail), 5.2% (road) and 8.7% (ferries) hourly error, about 60% better than "same hour last week"; for Ramazan Bayramı 2024 the error fell from 40–44% to 11–15% once 2.5 years of history were used. | [model](https://huggingface.co/yagmurtuncer/istanbul-transit-demand-gbm), [results](reports/results.md), [live demo](https://huggingface.co/spaces/yagmurtuncer/istanbul-transit-demand) |
 
 ## SQL warehouse (DuckDB)

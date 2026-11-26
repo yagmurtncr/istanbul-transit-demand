@@ -23,6 +23,11 @@ on:
 permissions:
   contents: write
 
+# Runs that commit generated files wait for each other instead of racing.
+concurrency:
+  group: commit-generated-files
+  cancel-in-progress: false
+
 jobs:
   analysis:
     runs-on: ubuntu-latest

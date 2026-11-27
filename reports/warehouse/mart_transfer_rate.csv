@@ -1,11 +1,4 @@
 year,mode_label,transfer_pct
-2023,"Road (bus, metrobus)",6.486269324385287
-2020,"Rail (metro, Marmaray, tram, funicular)",19.299509937730505
-2021,Sea (ferries),24.315771106057184
-2022,"Rail (metro, Marmaray, tram, funicular)",14.540048599318526
-2023,Sea (ferries),18.148673176548453
-2024,"Rail (metro, Marmaray, tram, funicular)",12.199948192557619
-2021,"Road (bus, metrobus)",8.55462334645162
 2024,"Road (bus, metrobus)",6.832952660363288
 2020,Sea (ferries),22.316366212835497
 2021,"Rail (metro, Marmaray, tram, funicular)",17.8434168895931
@@ -14,3 +7,10 @@ year,mode_label,transfer_pct
 2024,Sea (ferries),18.336588402355773
 2020,"Road (bus, metrobus)",8.357910086808332
 2022,"Road (bus, metrobus)",6.908136275613989
+2023,Sea (ferries),18.148673176548453
+2024,"Rail (metro, Marmaray, tram, funicular)",12.199948192557619
+2021,"Road (bus, metrobus)",8.55462334645162
+2023,"Road (bus, metrobus)",6.486269324385287
+2020,"Rail (metro, Marmaray, tram, funicular)",19.299509937730505
+2021,Sea (ferries),24.315771106057184
+2022,"Rail (metro, Marmaray, tram, funicular)",14.540048599318526

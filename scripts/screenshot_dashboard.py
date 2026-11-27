@@ -18,32 +18,52 @@ from playwright.async_api import async_playwright
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "reports" / "figures" / "dashboard"
 PORT = 8599
-# (file name, mode label, number of days to step back from the last day)
+# (file name, view, mode label, number of days to step back from the last day)
 SHOTS = [
-    ("rail_2024-07-31.png", "Rail (metro, Marmaray, tram)", 0),
-    ("road_holiday_2024-06-17.png", "Road (bus, metrobus)", 44),
+    ("future_day.png", "🔮 Future day", "Rail (metro, Marmaray, tram)", 0),
+    ("rail_2024-07-31.png", "🔍 Check a past day", "Rail (metro, Marmaray, tram)", 0),
+    ("road_holiday_2024-06-17.png", "🔍 Check a past day", "Road (bus, metrobus)", 44),
 ]
+
+
+async def shoot(page, name: str) -> None:
+    """Crop from the view switch to the bottom of the chart, leaving out the long intro text."""
+    await page.wait_for_timeout(1000)
+    top = await page.get_by_role("radio").first.bounding_box()
+    chart = await page.locator(".js-plotly-plot").last.bounding_box()
+    width = await page.evaluate("document.documentElement.clientWidth")
+    y = max(top["y"] - 30, 0)
+    await page.screenshot(path=str(OUT / name), clip={"x": 0, "y": y, "width": width,
+                                                      "height": chart["y"] + chart["height"] + 12 - y})
 
 
 async def capture() -> None:
     async with async_playwright() as p:
         browser = await p.chromium.launch()
-        page = await browser.new_page(viewport={"width": 1400, "height": 1000}, device_scale_factor=1.5)
+        page = await browser.new_page(viewport={"width": 1400, "height": 3200}, device_scale_factor=1.5)
         await page.goto(f"http://localhost:{PORT}", wait_until="networkidle")
-        await page.wait_for_selector("text=Actual passengers", timeout=300_000)
+        await page.wait_for_selector("text=Forecast passengers", timeout=300_000)
         print("app loaded", flush=True)
-        for name, mode, steps in SHOTS:
-            await page.get_by_role("combobox").first.click()
-            await page.get_by_role("option", name=mode).click()
-            await page.wait_for_timeout(2000)
-            slider = page.get_by_role("slider")
-            await slider.focus()
-            for _ in range(steps):
-                await page.keyboard.press("ArrowLeft")
+        current = "Rail (metro, Marmaray, tram)"  # default mode
+        for name, view, mode, steps in SHOTS:
+            await page.get_by_role("radio", name=view).check(force=True)
+            await page.wait_for_timeout(3000)
+            if mode != current:
+                await page.get_by_role("combobox").first.click()
+                await page.get_by_role("option", name=mode).click()
+                current = mode
+                await page.wait_for_timeout(2000)
+            label = name
+            if view.startswith("🔍"):
+                await page.wait_for_selector("text=Actual passengers", timeout=300_000)
+                slider = page.get_by_role("slider")
+                await slider.focus()
+                for _ in range(steps):
+                    await page.keyboard.press("ArrowLeft")
+                label = await slider.get_attribute("aria-valuetext")
             await page.wait_for_timeout(8000)  # retrain + redraw
-            await page.screenshot(path=str(OUT / name), full_page=True)
-            day = await slider.get_attribute("aria-valuetext")
-            print(f"saved {name} ({mode}, {day})", flush=True)
+            await shoot(page, name)
+            print(f"saved {name} ({mode}, {label})", flush=True)
         await browser.close()
 
 

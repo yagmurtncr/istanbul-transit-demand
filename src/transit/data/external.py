@@ -87,7 +87,8 @@ def holiday_calendar(start: str, end: str) -> pd.DataFrame:
     })
 
 
-# Primary/secondary school breaks, weekends included (MEB çalışma takvimleri 2021-22, 2022-23, 2023-24).
+# Primary/secondary school breaks, weekends included (MEB çalışma takvimleri 2021-22 ... 2026-27).
+# 2024-25 onwards is only used by the "future day" forecast in the app.
 SCHOOL_BREAKS = [
     ("2022-01-22", "2022-02-06"),   # semester break 2021-22
     ("2022-04-09", "2022-04-17"),   # 2nd mid-term break
@@ -100,13 +101,26 @@ SCHOOL_BREAKS = [
     ("2024-01-20", "2024-02-04"),   # semester break
     ("2024-04-06", "2024-04-14"),   # 2nd mid-term break (with Ramazan Bayramı)
     ("2024-06-15", "2024-09-08"),   # summer 2024
+    ("2024-11-09", "2024-11-17"),   # 1st mid-term break 2024-25
+    ("2025-01-18", "2025-02-02"),   # semester break
+    ("2025-03-29", "2025-04-06"),   # 2nd mid-term break (with Ramazan Bayramı)
+    ("2025-06-21", "2025-09-07"),   # summer 2025
+    ("2025-11-08", "2025-11-16"),   # 1st mid-term break 2025-26
+    ("2026-01-17", "2026-02-01"),   # semester break
+    ("2026-03-14", "2026-03-22"),   # 2nd mid-term break (with Ramazan Bayramı)
+    ("2026-06-27", "2026-09-13"),   # summer 2026
+    ("2026-11-14", "2026-11-22"),   # 1st mid-term break 2026-27
+    ("2027-01-23", "2027-02-07"),   # semester break
+    ("2027-03-06", "2027-03-14"),   # 2nd mid-term break (with Ramazan Bayramı)
+    ("2027-06-26", "2027-09-12"),   # summer 2027 (end date approximate)
 ]
 
 # Administrative leave for public employees that turned a bayram into a 9-day holiday ("köprü" days).
 BRIDGE_DAYS = ["2022-07-13", "2022-07-14", "2023-06-26", "2023-06-27", "2024-04-08", "2024-04-09",
                "2024-06-20", "2024-06-21"]
 # Ramazan (fasting month, Diyanet): evening demand shifts around iftar.
-RAMADAN = [("2022-04-02", "2022-05-01"), ("2023-03-23", "2023-04-20"), ("2024-03-11", "2024-04-09")]
+RAMADAN = [("2022-04-02", "2022-05-01"), ("2023-03-23", "2023-04-20"), ("2024-03-11", "2024-04-09"),
+           ("2025-03-01", "2025-03-29"), ("2026-02-19", "2026-03-19"), ("2027-02-08", "2027-03-08")]
 # National elections (presidential / parliamentary / local).
 ELECTION_DAYS = ["2023-05-14", "2023-05-28", "2024-03-31"]
 

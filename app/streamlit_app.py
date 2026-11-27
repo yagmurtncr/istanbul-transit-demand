@@ -134,8 +134,8 @@ tab_en.markdown(
     "and its forecast is shown next to the real İBB counts and the last-week rule, so you can see how accurate it is.\n\n"
     "**How to use:** choose a view, a transport mode (Mode) and a date.\n\n"
     "**Tip:** in *Check a past day*, pick **10 April 2024** (Ramazan Bayramı) or **23 April 2024**. The last-week "
-    "rule goes badly wrong on these holidays, the model does not. For a rainy day, try **29 November 2023**: "
-    "on ferries you will see the model miss too."
+    "rule goes badly wrong on these holidays, the model does not. For a very rainy day, try **29 November 2023**: "
+    "ferry ridership fell to a quarter of normal, and the model still came closer than the last-week rule."
 )
 tab_tr.markdown(
     "**Neden var?** İstanbul'da raylı sistemler, otobüsler ve vapurlar günde milyonlarca yolcu taşıyor ve talep "
@@ -150,8 +150,8 @@ tab_tr.markdown(
     "ne kadar isabetli olduğunu görebilirsin.\n\n"
     "**Nasıl kullanılır?** Bir görünüm, bir ulaşım türü (Mode) ve bir tarih seç.\n\n"
     "**İpucu:** *Check a past day* görünümünde **10 Nisan 2024** (Ramazan Bayramı) veya **23 Nisan 2024**'ü seç. "
-    "\"Geçen hafta\" kuralı bu tatillerde çok yanılır, model ise yakalar. Yağmurlu bir gün için **29 Kasım 2023**'e bak: "
-    "vapurlarda modelin de yanıldığını göreceksin."
+    "\"Geçen hafta\" kuralı bu tatillerde çok yanılır, model ise yakalar. Çok yağmurlu bir gün için **29 Kasım 2023**'e bak: "
+    "vapur yolcusu normalin dörtte birine düşmesine rağmen model \"geçen hafta\" kuralından daha yakın tahmin yapıyor."
 )
 
 view = st.radio("View", ["🔮 Future day", "🔍 Check a past day"], horizontal=True, label_visibility="collapsed")

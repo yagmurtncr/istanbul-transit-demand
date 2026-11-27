@@ -132,7 +132,13 @@ tab_en.markdown(
     "holidays, school breaks and the weather forecast.\n"
     "- **🔍 Check a past day:** pick a day between 2022 and 2024. The model trains only on data *before* that day "
     "and its forecast is shown next to the real İBB counts and the last-week rule, so you can see how accurate it is.\n\n"
-    "**Try it:** choose a view, a transport mode and a date. Holidays, school breaks and rainy days are the most interesting."
+    "**How to use:** choose a view, a transport mode (Mode) and a date.\n\n"
+    "**Tip:** the difference is clearest on public holidays, where the last-week rule goes badly wrong. "
+    "Try these in *Check a past day*:\n"
+    "- **10 April 2024** (Ramazan Bayramı): the last-week rule is off by 59-71%, the model by 11-19%.\n"
+    "- **23 April 2024** (public holiday): the rule is off by 26-45%, the model by 5-10%.\n"
+    "- **29 November 2023** (one of the rainiest days in the data, 28 mm in daytime): the model wins on rail "
+    "and road, but both methods miss badly on ferries. This is where you see the model's limits."
 )
 tab_tr.markdown(
     "**Neden var?** İstanbul'da raylı sistemler, otobüsler ve vapurlar günde milyonlarca yolcu taşıyor ve talep "
@@ -145,8 +151,13 @@ tab_tr.markdown(
     "- **🔍 Check a past day (geçmiş günü test et):** 2022-2024 arasından bir gün seç. Model yalnızca o günden *önceki* "
     "verilerle eğitilir ve tahmini gerçek İBB sayıları ve \"geçen hafta\" kuralıyla yan yana gösterilir. Böylece modelin "
     "ne kadar isabetli olduğunu görebilirsin.\n\n"
-    "**Nasıl kullanılır?** Bir görünüm, bir ulaşım türü (Mode) ve bir tarih seç. En ilginç sonuçlar resmi tatillerde, "
-    "okul tatillerinde ve yağmurlu günlerde çıkıyor."
+    "**Nasıl kullanılır?** Bir görünüm, bir ulaşım türü (Mode) ve bir tarih seç.\n\n"
+    "**İpucu:** Farkı en net resmi tatillerde görürsün, çünkü \"geçen hafta\" kuralı bu günlerde çok yanılır. "
+    "*Check a past day* görünümünde şunları dene:\n"
+    "- **10 Nisan 2024** (Ramazan Bayramı): \"geçen hafta\" kuralı %59-71 yanılırken model %11-19 yanılıyor.\n"
+    "- **23 Nisan 2024** (resmi tatil): kural %26-45, model %5-10 yanılıyor.\n"
+    "- **29 Kasım 2023** (verideki en yağmurlu günlerden biri, gündüz 28 mm): raylı sistem ve karayolunda model daha iyi, "
+    "vapurlarda ise iki yöntem de çok yanılıyor. Modelin sınırını burada görebilirsin."
 )
 
 view = st.radio("View", ["🔮 Future day", "🔍 Check a past day"], horizontal=True, label_visibility="collapsed")

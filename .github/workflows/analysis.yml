@@ -19,6 +19,7 @@ on:
       - "src/transit/data/**"
       - "app/**"
       - "scripts/screenshot_dashboard.py"
+      - "scripts/readme_figures.py"
 
 permissions:
   contents: write
@@ -45,6 +46,8 @@ jobs:
           python warehouse/build.py
           python scripts/business_report.py
           python tableau/export_tableau.py
+      - name: README figures
+        run: python scripts/readme_figures.py
       - name: Dashboard screenshots
         run: |
           pip install -e ".[app]" playwright

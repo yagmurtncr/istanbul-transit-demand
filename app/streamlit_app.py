@@ -50,6 +50,17 @@ feats = load()
 st.title("🚇 Istanbul public transport demand")
 st.caption("İBB open data, January 2022 – July 2024 · gradient boosting (Poisson loss) with weather, holidays and school breaks")
 
+st.markdown(
+    "**Why this exists.** Istanbul's rail, bus and ferry networks carry millions of trips a day, and demand swings "
+    "sharply with the hour, the weather, holidays and school breaks. Operators have to decide a day ahead how many "
+    "trains, buses and ferries to run and how many staff to schedule; the usual rule of thumb is *\"expect what we "
+    "saw at the same hour last week\"*, which breaks down exactly on the unusual days that matter most.\n\n"
+    "**What it does.** This dashboard tests whether a machine-learning model can do better. For any day you pick, "
+    "it trains only on the data *before* that day, forecasts all 24 hours, and puts the forecast next to the real "
+    "İBB passenger counts and the last-week rule, so you can see where it helps and where it doesn't.\n\n"
+    "**Try it:** pick a transport mode, then drag the **Day to forecast** slider to choose a date. The forecast for that date appears right below. Holidays, school breaks and rainy days are the most interesting."
+)
+
 c1, c2 = st.columns([1, 2])
 mode = c1.selectbox("Mode", list(MODES), format_func=MODES.get)
 days = sorted(feats["timestamp"].dt.normalize().unique())
@@ -62,6 +73,9 @@ info = feats[(feats["timestamp"].dt.normalize() == day)].iloc[0]
 flags = [label for col, label in (("is_holiday", "public holiday"), ("is_eve", "holiday eve"),
                                   ("school_closed", "school break"), ("is_weekend", "weekend")) if info.get(col) == 1]
 rain = feats[(feats["timestamp"].dt.normalize() == day) & feats["timestamp"].dt.hour.between(6, 21)]["precipitation"].sum()
+
+st.subheader(f"Forecast for {day.strftime('%A, %d %B %Y')} · {MODES[mode]}")
+st.caption(f"Model trained on all hours before {day.strftime('%d %b %Y')}; it has not seen this day's data.")
 
 m_model, m_naive = metrics(res["passengers"], res["forecast"]), metrics(res["passengers"], res["lag_168"])
 k1, k2, k3, k4 = st.columns(4)
@@ -78,7 +92,7 @@ fig.add_scatter(x=res["timestamp"].dt.hour, y=res["forecast"], name="Forecast", 
                 line={"color": "#1a73e8", "width": 3})
 fig.add_scatter(x=res["timestamp"].dt.hour, y=res["lag_168"], name="Same hour last week", mode="lines",
                 line={"color": "#999", "dash": "dot"})
-fig.update_layout(xaxis_title="Hour of day", yaxis_title="Passengers", height=420, legend={"orientation": "h"},
+fig.update_layout(xaxis_title=f"Hour of day ({day.strftime('%a %d %b %Y')})", yaxis_title="Passengers", height=420, legend={"orientation": "h"},
                   margin={"t": 10})
 try:
     st.plotly_chart(fig, width="stretch")

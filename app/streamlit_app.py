@@ -50,7 +50,8 @@ feats = load()
 st.title("🚇 Istanbul public transport demand")
 st.caption("İBB open data, January 2022 – July 2024 · gradient boosting (Poisson loss) with weather, holidays and school breaks")
 
-st.markdown(
+tab_en, tab_tr = st.tabs(["English", "Türkçe"])
+tab_en.markdown(
     "**Why this exists.** Istanbul's rail, bus and ferry networks carry millions of trips a day, and demand swings "
     "sharply with the hour, the weather, holidays and school breaks. Operators have to decide a day ahead how many "
     "trains, buses and ferries to run and how many staff to schedule; the usual rule of thumb is *\"expect what we "
@@ -58,7 +59,20 @@ st.markdown(
     "**What it does.** This dashboard tests whether a machine-learning model can do better. For any day you pick, "
     "it trains only on the data *before* that day, forecasts all 24 hours, and puts the forecast next to the real "
     "İBB passenger counts and the last-week rule, so you can see where it helps and where it doesn't.\n\n"
-    "**Try it:** pick a transport mode, then drag the **Day to forecast** slider to choose a date. The forecast for that date appears right below. Holidays, school breaks and rainy days are the most interesting."
+    "**Try it:** pick a transport mode, then drag the **Day to forecast** slider to choose a date. "
+    "The forecast for that date appears right below. Holidays, school breaks and rainy days are the most interesting."
+)
+tab_tr.markdown(
+    "**Neden var?** İstanbul'da raylı sistemler, otobüsler ve vapurlar günde milyonlarca yolcu taşıyor ve talep "
+    "saate, havaya, resmi tatillere ve okul tatillerine göre ciddi şekilde değişiyor. İşletmeler kaç sefer yapılacağına "
+    "ve kaç personel çalıştırılacağına bir gün önceden karar vermek zorunda. Genelde kullanılan kural "
+    "*\"geçen hafta aynı saatte ne olduysa yine o olur\"*; ama bu kural tam da önemli olan sıra dışı günlerde yanılıyor.\n\n"
+    "**Ne yapıyor?** Bu panel, bir makine öğrenmesi modelinin bu kuraldan daha iyi tahmin yapıp yapamayacağını test ediyor. "
+    "Seçtiğin gün için model yalnızca o günden *önceki* verilerle eğitiliyor, günün 24 saatini tahmin ediyor ve tahmini "
+    "gerçek İBB yolcu sayıları ve \"geçen hafta\" kuralıyla yan yana gösteriyor. Böylece modelin nerede işe yaradığını, "
+    "nerede yaramadığını görebilirsin.\n\n"
+    "**Nasıl kullanılır?** Bir ulaşım türü (Mode) seç, ardından **Day to forecast** kaydırıcısıyla bir tarih seç. "
+    "O günün tahmini hemen aşağıda görünür. En ilginç sonuçlar resmi tatillerde, okul tatillerinde ve yağmurlu günlerde çıkıyor."
 )
 
 c1, c2 = st.columns([1, 2])
